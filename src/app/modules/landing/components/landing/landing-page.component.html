@@ -1,0 +1,41 @@
+<div class="wrapper" [ngClass]="{ toggled: showSidebar == true }">
+  
+    <div class="sidebar-wrapper" [ngClass]="{ toggled: showSidebar == true }">
+        <app-landing-sidebar (activeMenuEmitter)="activeMenu = $event" (showSidebarEmitter)="handleShowSidebar()"></app-landing-sidebar>
+    </div>
+  
+    <div class="content-wrapper" >
+      <div class="header" >
+        <div id="topnav">
+          <app-landing-topnav (showSidebarEmitter)="handleShowSidebar()"></app-landing-topnav>
+        </div>
+        <div id="intro">
+          <app-intro></app-intro>
+        </div>
+      </div>
+      <div id="why-taskspur">
+        <app-why-taskspur></app-why-taskspur>
+      </div>
+      <div id="meet-ari">
+        <app-meet-ari></app-meet-ari>
+      </div>
+      <div id="subscription">
+        <app-subscription></app-subscription>
+      </div>
+      <div id="discover">
+        <app-discover></app-discover>
+      </div>
+      <div id="contact-us">
+        <app-contact-us></app-contact-us>
+      </div>
+      <div id="footer">
+        <app-landing-footer></app-landing-footer>
+      </div>
+        
+      <div id="ari-chat">
+        <img src="../../../assets/images/ari_logo_ball_2.png">
+      </div>
+    </div>
+</div>
+
+  

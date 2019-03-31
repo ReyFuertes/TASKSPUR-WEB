@@ -1,0 +1,19 @@
+@import "../../../../styleguide/shared";
+
+:host {
+  .fa-exclamation-triangle {
+    color:#FFC400
+  }
+  
+  .uc-container {
+    padding: 40px 40px 0 40px;
+  }
+
+  h3 {
+    font-weight: bold;
+    color:$color-gray;
+  }
+  
+}
+
+

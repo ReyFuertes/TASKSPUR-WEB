@@ -1,0 +1,15 @@
+<div *ngIf="parentForm" [formGroup]="parentForm">
+  <div *ngFor="let radio of radios" class="row mt-1 mb-1 radio-row">
+    <div class="col-12">
+      <p-radioButton 
+        [value]="radio.value"
+        [formControlName]="controlName" 
+        [class]=" parentForm.get('point').value == radio.value ? 'selectedRadio ' + radio.class: radio.class"
+        [label]="radio.label" 
+        (click)="onSelectRadio($event)" 
+        name="groupname"
+      >
+    </p-radioButton>
+    </div>
+  </div>
+</div>

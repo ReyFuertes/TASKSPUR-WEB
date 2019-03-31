@@ -1,0 +1,71 @@
+<div class="row message-box" [ngStyle]="{'position': 'absolute', 'width': '100%'}">
+  <p-messages [(value)]="msgs" [closable]="false"></p-messages>
+</div>
+
+<!-- [@scaleAnimation]="animationState" We need to revisit this -->
+
+<div class="container">
+  <div class="row box-container">
+    <div [@swapAnimation]="leftBox" class="col-sm-12 col-lg-7 box ls-container">
+      <form *ngIf="!swap" novalidate [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="login-content">
+          <h3>Sign in to TaskSpur</h3>
+
+          <div class="floating-label group">
+            <input class="ts_input-email" #username type="email" formControlName="username" name="username"
+              autocomplete="off" tabindex="1" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Email</label>
+            <i *ngIf="loginForm.get('username').dirty" (click)="onClear()" class="fas fa-times icon-email-error"></i>
+          </div>
+
+          <div class="floating-label group mb-0">
+            <input class="ts_input-password" #pwd formControlName="password" name="password" type="password"
+              autocomplete="off" tabindex="2" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Password</label>
+            <i (click)="showPassword(pwd)" class="fas fa-eye icon-password-view"></i>
+          </div>
+
+          <div class="row"><a class="ts_color-blue forgot-password-link link" routerLink="/forgot-password">Forgot
+              Password</a></div>
+
+          <div class="row">
+            <button [disabled]="!loginForm.valid || isSubmitting" class="btn ts_button-rounded btn-signin">
+              <i *ngIf="isSubmitting" class="fas fa-spinner fa-pulse"></i> SIGN IN</button>
+          </div>
+
+          <div class="social-container">
+            <fieldset>
+              <legend>
+                <h6>OR LOGIN WITH</h6>
+              </legend>
+            </fieldset>
+            <div class="social-icons">
+              <app-google-login></app-google-login>
+              <app-facebook-login></app-facebook-login>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div *ngIf="swap" class="register-content">
+        <app-register></app-register>
+      </div>
+    </div>
+    <div [@swapAnimation]="rightBox" class="col-sm-12 col-lg-5 box swap-container">
+      <div *ngIf="!swap" class="sign-up">
+        <h3>Hello</h3>
+        <p>Enter your personal details and start your journey with us.</p>
+        <button type="button" (click)="onToggle()" class="btn btn-transparent">SIGN UP</button>
+      </div>
+      <div *ngIf="swap" class="sign-in">
+        <h3>Welcome Back!</h3>
+        <p>Please sign in with your account to get the fun started.</p>
+        <button type="button" (click)="onToggle()" class="btn btn-transparent btn-signup">SIGN IN</button>
+      </div>
+    </div>
+  </div>
+</div>

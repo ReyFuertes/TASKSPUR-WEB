@@ -1,0 +1,20 @@
+
+@mixin cb {
+  &:disabled {
+    background: #ccc;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+  
+}
+
+@mixin cb-blue {
+  @include cb;
+
+  background: $gradient-blue;
+  color: $color-white;
+  width:100%;
+}

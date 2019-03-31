@@ -1,0 +1,62 @@
+@mixin badge {}
+
+@mixin badge-red {
+  position: absolute;
+  left: 23px;
+  font-size: 12px;
+  background: $color-red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  top: -8px;
+  font-size: 10px;
+  z-index: 999;
+}
+
+@mixin badge-info {
+  position: absolute;
+  left: 23px;
+  font-size: 12px;
+  background: $bg-info;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  top: -8px;
+  font-size: 10px;
+  z-index: 999;
+}
+
+@mixin badge-primary {
+  position: absolute;
+  left: 23px;
+  font-size: 12px;
+  background: $color-primary;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  top: -8px;
+  font-size: 10px;
+  z-index: 999;
+}
+
+@mixin badge-warning {
+  position: absolute;
+  left: 23px;
+  font-size: 12px;
+  background: $color-warning;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  top: -8px;
+  font-size: 10px;
+  z-index: 999;
+  text-shadow: $text-shadow;
+}

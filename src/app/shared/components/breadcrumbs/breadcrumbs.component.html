@@ -1,0 +1,20 @@
+<div [ngStyle]="{'max-width': '750px'}">
+  <div class="row">
+    <div class="col-xs-12 col-lg-7">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li *ngFor="let breadcrumb of breadcrumbs; let last = last" class="breadcrumb-item">
+            <a *ngIf="breadcrumb.path && !last" (click)="goToBreadcrumb(breadcrumb.path)" class="active-link">{{breadcrumb.text}}</a>
+            <i *ngIf="!breadcrumb.path || last" class="fas fa-angle-right"></i>
+            <span *ngIf="!breadcrumb.path || last" class="current-link">{{ breadcrumb.text}}</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- <div class="col-xs-12 col-lg-5 curr-date-time">
+        {{ currDateTime }}
+    </div> -->
+
+  </div>
+</div>

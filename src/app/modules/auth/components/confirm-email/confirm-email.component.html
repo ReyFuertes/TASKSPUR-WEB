@@ -1,0 +1,19 @@
+<p-toast position="top-center"></p-toast>
+
+<!-- [@scaleAnimation]="animationState" We need to revisit this -->
+
+<div class="container">
+  <div class="card-bg">
+    <div class="content" *ngIf="isConfirm">
+     
+
+      <h2>EMAIL CONFIRMATION</h2>
+      <p>
+        {{message}}<br/>
+        Let's log in and start the fun.
+      </p>
+
+      <button type="button" class="btn btn-link link" routerLink="/login">Go to login page</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+@import '../../../../styleguide/shared';
+
+.shared-dropdown-notification {
+  @include dropdown-menu;
+  padding: 10px 0 0 0;
+
+  a {
+    padding: 5px 20px 5px 15px;
+    font-size: 12px;
+    font-weight: 400;
+
+    span {
+      display: block;
+      margin-left: 40px;
+      
+    }
+    
+    .action-label {
+      font-size: 10px;
+      color: $color-lighter-gray;
+    }
+  }
+
+  i {
+    font-size: 14px;
+    position: absolute;
+    border-radius: 50%;
+    color: $color-white;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    padding-top: 8px;
+    text-shadow: 0.5px 0.5px 0.5px $color-light-gray;
+  }
+
+  li:not(:last-child) {
+    border-bottom: 1px solid $color-lighter-gray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .all-notification {
+    font-size: 12px !important;
+    padding: 10px 0;
+  }
+
+  .card-blue {
+    background: $bg-blue;
+  }
+
+  .expenses-yellow {
+    background: $bg-yellow;
+  }
+
+  .tickets-green {
+    background: $bg-green;
+  }
+}

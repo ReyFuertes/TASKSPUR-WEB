@@ -1,0 +1,49 @@
+<div class="nav-container fixed-top">
+  <nav class="navbar navbar-expand-lg">
+    <div>
+      <i class="fas fa-bars fa-2x" (click)="toggleSidebar()"></i>
+      <span class="navbar-brand">TaskSpur</span>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li *ngFor="let link of menuLinks" class="nav-item router-link-item">
+          <a href="javascript:void(0)" [routerLink]="link.route" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-link" (click)="gotoRoute($event, link)">{{ link.text }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar nav-right">
+      <ul class="nav nav-pills float-right nav-right-section">
+        <li class="nav-item">
+          <i class="fas fa-bell"
+            [ngStyle]="{'cursor': 'pointer'}"
+            (click)="isShowNotificationDropdown = !isShowNotificationDropdown"><span class="badge">3</span></i>
+          <div
+            class="dropdown-notification-container"
+            [ngClass]="{ active: isShowNotificationDropdown == true }">
+            <app-dropdown-notification
+              [menuItem]="notificationDropdownMenuLink"
+              (showDropdownMenu)="handleNotificationDropdownShow($event)"></app-dropdown-notification>
+          </div>
+        </li>
+        <li class="nav-item">
+          <img *ngIf="profileInfo && profileInfo.profilePhoto.url" class="img-fluid profile-img" [src]="profileInfo.profilePhoto.url" />
+        </li>
+        <li class="nav-item user-name">
+          <h5>{{ profileInfo?.name?.fullName }}</h5>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-angle-down dropdown-toggle" data-toggle="dropdown"></i>
+          <div class="dropdown-menu">
+            <a href="javascript:void(0)" *ngFor="let link of piLinks" class="dropdown-item" (click)="onRoute(link)">
+              {{ link.text }}
+            </a>
+            <a href="javascript:void(0)" class="dropdown-item" (click)="onLogout()"> Sign out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</div>

@@ -1,0 +1,59 @@
+<p-toast position="top-center"></p-toast>
+<div class="setting-container" >
+  <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+ 
+  <div class="card-web">
+    <div class="card-web-header">{{ settingInformationText }}</div>
+    <div class="card-web-content">
+      <div [ngStyle]="{'margin-bottom': '30px'}">
+        Change Password
+      </div>
+      <form novalidate [formGroup]="settingForm" (ngSubmit)="changePassword()">
+        <div class="row">
+          <div class="col-xs-12 col-md-6 col-lg-7">
+            <div class="col-xs-12">
+              <div class="floating-label group">
+                <input #currPwd class="ts_input-password" formControlName="currentPassword" name="currentPassword" type="password" autocomplete="off"
+                    tabindex="1" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Current Password</label>
+                <i (click)="showPassword(currPwd)" class="fas fa-eye icon-password-view"></i>
+              </div>
+            </div>
+
+            <div class="col-xs-12">
+              <div class="floating-label group">
+                <input #pwd class="ts_input-password" formControlName="password" name="password" type="password" autocomplete="off"
+                    tabindex="2" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>New Password</label>
+                <i (click)="showPassword(pwd)" class="fas fa-eye icon-password-view"></i>
+              </div>
+            </div>
+            <div *ngIf="!settingForm.get('password').valid && settingForm.get('password').dirty && settingForm.get('password').value != ''" class="error-hint">
+              * Password must have at least one non letter or digit character and minimum of 8 characters.
+            </div>
+
+            <div class="col-xs-12">
+              <div class="floating-label group">
+                <input #rpwd class="ts_input-password" formControlName="repeatPassword" name="repeatPassword" type="password" autocomplete="off"
+                    tabindex="3" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label [ngClass]="{'control-invalid': !settingForm.get('repeatPassword').valid && settingForm.get('repeatPassword').dirty }">Repeat New Password</label>
+                <i (click)="showPassword(rpwd)" class="fas fa-eye icon-password-view"></i>
+              </div>
+            </div>
+            <!-- <span class="pwd-instruction">* Atleast 8 aphanumeric characters</span> -->
+            <div class="col-xs-12 btn-container" [ngStyle]="{'text-align': 'left'}">
+              <button type="submit" [disabled]="!settingForm.valid || isSubmitting" class="btn btn-primary btn-save-changes">
+                  <i *ngIf="isSubmitting" class="fas fa-spinner fa-pulse"></i> Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

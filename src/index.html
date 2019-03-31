@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>TaskSpur</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet">
+
+  <style>
+      .loader-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform:  translate(-50%, -50%);
+      }
+  
+      .ari-logo-loader {
+        width: 250px;
+      }
+  
+      @media (max-width: 767px) {
+        .ari-logo-loader {
+          width: 180px;
+        }
+      }
+  </style>
+</head>
+
+<body>
+  
+  <app-root>
+    <div class="loader-container">
+      <img src="./assets/images/loader.gif" class="ari-logo-loader" alt="Loading… Hang in there…">
+    </div>
+  </app-root>
+</body>
+
+</html>

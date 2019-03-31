@@ -1,0 +1,18 @@
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-header-text">
+      Menu
+    </div>
+  </div>
+
+  <ul class="list-unstyled components sidebar-links">
+    <li *ngFor="let link of sidebarLinks" class="router-link-item">
+      <a href="javascript:void(0)" (click)="gotoRoute($event, link)">{{link.text}}</a>
+    </li>
+  </ul>
+
+  <div class="sidebar-copyright">
+    &copy; Copyright 2018 TaskSpur All Rights Reserved.
+  </div>
+
+</nav>

@@ -1,0 +1,149 @@
+@import '../../../../../styleguide/shared';
+
+:host {
+  #sidebar {
+    min-width: 215px;
+    color: #fff;
+    background: #000000;
+    box-shadow: 0.3rem 0px 2rem -0.2rem rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0.3rem 0px 2rem -0.2rem rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0.3rem 0px 2rem -0.2rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    height: 100vh;
+
+    &.active {
+      margin-left: -250px;
+    }
+
+    .fas {
+      color: #fff;
+    }
+
+    .sidebar-header {
+      padding: 10px;
+
+      .sidebar-header-text {
+        font-size: 24px;
+        letter-spacing: 1px;
+        padding: 20px 0px 20px 26px;
+        display: inline-block;
+        font-weight: 700;
+      }
+
+      .sidebar-header-close {
+        display: none;
+        font-size: 28px;
+        padding: 15px 30px;
+        text-align: right;
+      }
+
+      .navbar {
+        float: right;
+        padding-top: 20px;
+        padding-left: 0px;
+        padding-right: 26px;
+       
+        .nav-signin {
+          color: #25CBFF;
+          border: solid 1px #25CBFF;
+          border-radius: 25px;
+          padding: 8px 22px;
+          transition: all .2s;
+          display: inline-block;
+          margin-right: 20px;
+          font-size: 14px;
+        }
+    
+        .nav-signin:hover {
+          background-color: #0199FF;
+          border: solid 1px #0199FF;
+          font-weight: 700;
+          color: #fff;
+          -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+          -webkit-box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+        }
+
+        i {
+          display: inline-block;
+          font-size: 28px;
+        }
+      }
+    }
+
+    a {
+      
+      font-size: 19px;
+      display: block;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      padding: 10px 0;
+
+      &:hover {
+        color: #fff;     
+      }
+
+      i {
+        margin-right: 15px;
+        width: 20px;
+        font-size: 20px;
+      }
+
+      [data-toggle="collapse"] {
+        position: relative;
+      }
+    }
+
+    ul {
+      height: calc(100% - 190px);
+      margin-top: 50px;
+
+      li {
+        padding: 8px 90px 8px 36px;
+      }
+
+      p {
+        color: #fff;
+        padding: 10px;
+      }
+
+      li.active > a {
+        color: #FFCC66;
+        border-bottom: solid 1px #FFCC66;
+      }
+    }
+
+    .sidebar-copyright {
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      bottom: 70px;
+      position: relative;
+      margin-left: 36px;
+      margin-right: 36px;
+      font-size: 15px;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  :host {
+    #sidebar {
+    
+      .sidebar-header {
+  
+        .navbar {
+
+          .nav-signin {
+          
+            padding: 6px 12px;
+          
+          }
+        }
+      }
+    }
+  }
+}

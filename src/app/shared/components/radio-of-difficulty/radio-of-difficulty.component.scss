@@ -1,0 +1,181 @@
+@import '../../../../styleguide/shared';
+
+.radio-row {
+}
+
+:host ::ng-deep .ui-radiobutton-label {
+  width: 50%;
+  cursor: pointer;
+  border-radius: 4px;
+  
+  &:hover {
+    background: $bg-white-gray;
+  }
+}
+
+:host ::ng-deep .radio-info .ui-radiobutton .ui-radiobutton-box.ui-state-active:not(.ui-state-disabled):hover {
+  border-color: $color-info;
+  background-color: $bg-info;
+}
+
+:host ::ng-deep .radio-primary .ui-radiobutton .ui-radiobutton-box.ui-state-active:not(.ui-state-disabled):hover {
+  border-color: $color-primary;
+  background-color: $bg-primary;
+}
+
+:host ::ng-deep .radio-warning .ui-radiobutton .ui-radiobutton-box.ui-state-active:not(.ui-state-disabled):hover {
+  border-color: $color-warning;
+  background-color: $bg-warning;
+}
+
+:host ::ng-deep .radio-secondary .ui-radiobutton .ui-radiobutton-box.ui-state-active:not(.ui-state-disabled):hover {
+  border-color: $color-secondary;
+  background-color: $bg-secondary;
+}
+
+:host ::ng-deep .radio-danger .ui-radiobutton .ui-radiobutton-box.ui-state-active:not(.ui-state-disabled):hover {
+  border-color: $color-danger;
+  background-color: $bg-danger;
+}
+
+/* radio button customization */
+:host ::ng-deep .ui-radiobutton {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: thin $color-white solid;
+  padding: 2px;
+}
+
+:host ::ng-deep .selectedRadio.radio-info .ui-radiobutton {
+  border: 1px solid $color-info;
+  padding: 2px !important;
+
+  .ui-radiobutton-box.ui-state-active.ui-state-focus {
+    background-color: $bg-info;
+    border-color: $color-info;
+  }
+}
+
+:host ::ng-deep .selectedRadio.radio-primary .ui-radiobutton {
+  border: 1px solid $color-primary;
+  padding: 2px !important;
+
+  .ui-radiobutton-box.ui-state-active.ui-state-focus {
+    background-color: $bg-primary;
+    border-color: $color-primary;
+  }
+}
+
+:host ::ng-deep .selectedRadio.radio-warning .ui-radiobutton {
+  border: 1px solid $color-warning;
+  padding: 2px !important;
+
+  .ui-radiobutton-box.ui-state-active.ui-state-focus {
+    background-color: $bg-warning;
+    border-color: $color-warning;
+  }
+}
+
+:host ::ng-deep .selectedRadio.radio-secondary .ui-radiobutton {
+  border: 1px solid $color-secondary;
+  padding: 2px !important;
+
+  .ui-radiobutton-box.ui-state-active.ui-state-focus {
+    background-color: $bg-secondary;
+    border-color: $color-secondary;
+  }
+}
+
+:host ::ng-deep .selectedRadio.radio-danger .ui-radiobutton {
+  border: 1px solid $color-danger;
+  padding: 2px !important;
+
+  .ui-radiobutton-box.ui-state-active.ui-state-focus {
+    background-color: $bg-danger;
+    border-color: $color-danger;
+  }
+}
+
+:host ::ng-deep .ui-radiobutton .ui-radiobutton-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+  border: none;
+}
+
+:host ::ng-deep .ui-radiobutton .ui-radiobutton-box.ui-state-default {
+  :before {
+    content: none;
+  }
+
+  :after {
+    content: none;
+  }
+}
+
+:host ::ng-deep .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 9px;
+    background-color: #fff;
+    left: 10px;
+    top: 4px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 2px;
+    background-color: #fff;
+    left: 7px;
+    top: 11px;
+  }
+}
+
+:host ::ng-deep .ui-radiobutton .ui-radiobutton-box .ui-radiobutton-icon {
+  margin-left: -6px;
+  margin-top: -18px;
+}
+
+:host ::ng-deep .ui-radiobutton .ui-radiobutton-box.ui-state-active .ui-radiobutton-icon {
+  background-color: transparent;
+}
+
+:host ::ng-deep .ui-inputswitch.ui-inputswitch-checked {
+  @include input-switch-red;
+}
+
+:host ::ng-deep .radio-info .ui-radiobutton .ui-radiobutton-box {
+  @include radio-info;
+}
+
+:host ::ng-deep .radio-primary .ui-radiobutton .ui-radiobutton-box {
+  @include radio-primary;
+}
+
+:host ::ng-deep .radio-warning .ui-radiobutton .ui-radiobutton-box {
+  @include radio-warning;
+}
+
+:host ::ng-deep .radio-secondary .ui-radiobutton .ui-radiobutton-box {
+  @include radio-secondary;
+}
+
+:host ::ng-deep .radio-danger .ui-radiobutton .ui-radiobutton-box {
+  @include radio-danger;
+}

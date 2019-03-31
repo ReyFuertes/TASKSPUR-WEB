@@ -1,0 +1,64 @@
+<div class="board-container">
+  <div class="board-header-container">
+    <div class="row board-header">
+      <div class="col-6 col-md-4">
+        <h4>Boards</h4>
+        <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+      </div>
+      <div class="col-6 col-md-8 btn-action-container">
+        <div class="btn-action-mobile btn-group" role="group">
+          <button type="button" class="btn btn-search-mobile"><i class="fas fa-search"></i></button>
+          <button type="button" (click)="showAddBoard = !showAddBoard" class="btn btn-create-mobile"><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="col-12 btn-action-web">
+          <div class="row">
+            <div class="col p-0">
+              <button type="button" (click)="showAddBoard = !showAddBoard" class="btn btn-create-web float-right">Create New Board</button>
+
+              <app-dropdown-multiselect-filter
+                class="dropdown-multiselect-filter pr-2 float-right"
+                [items]="filterBoards"
+                [selectedItemsLabel]="selectedItemsLabel"
+                [filterPlaceHolder]="filterPlaceHolder"
+                [defaultLabel]="defaultLabel"
+                (selectedItemEmitted)="onFilterByBoards($event)">
+              </app-dropdown-multiselect-filter>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row board-content">
+    <div *ngFor="let board of (filtered.length > 0 ? filtered : boards)" class="col-sm-12 col-md-12 col-lg-3">
+      <app-board [board]="board" [aeMode]="aeModeNew" (reloadEmitter)="load($event)"></app-board>
+    </div>
+  </div>
+</div>
+
+<p-confirmDialog appendTo="body" positionTop="200" key="bc" header="Confirmation"></p-confirmDialog>
+
+<!-- add board dialog -->
+<p-dialog
+  [modal]="true"
+  [styleClass]="'board-dialog'"
+  [(visible)]="showAddBoard"
+  [responsive]="true"
+  [transitionOptions]="'150ms'"
+  [baseZIndex]="baseZIndex"
+  [positionTop]="positionTop"
+  [header]="'Create New Board'"
+  [transitionOptions]="'150ms'">
+  <app-board-detail [aeMode]="1" (formEmitter)="boardDetailComponent.form = $event" (reloadEmitter)="load($event)"></app-board-detail>
+  <p-footer>
+    <button type="button" class="btn btn-create" [disabled]="!boardDetailComponent.form.valid" (click)="onBoardSave()">Save</button>
+    <button type="button" class="btn btn-cancel" (click)="showAddBoard=false">Cancel</button>
+  </p-footer>
+</p-dialog>
+
+<app-bs-modal [modalId]="'membersModal'" [maxWidth]="'940px'" [modalTitle]="'Members'">
+  <ng-container class="body">
+    <app-board-member [members]="members"></app-board-member>
+  </ng-container>
+</app-bs-modal>

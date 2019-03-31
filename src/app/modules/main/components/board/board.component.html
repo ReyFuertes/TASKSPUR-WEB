@@ -1,0 +1,46 @@
+<div *ngIf="board" class="bc-card">
+  <div class="row bc-content">
+    <div class="col-4">
+      <div *ngIf="myChart">
+        <canvas #myChart height="20" width="20"></canvas>
+        <span class="fill-text fade-in">80%</span>
+      </div>
+    </div>
+    <div class="col" [ngClass]="getPadding(board.name)">
+      <div class="bc-title">
+        <h5>{{ board.name | truncate:[70] }}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="row bc-footer">
+    <div data-toggle="modal" data-target="#membersModal" class="col-7 bc-icon-container">
+      <div class="float-left bc-pp-icon d-none"></div>
+      <div class="float-left bc-pp-icon d-none"></div>
+      <div class="float-left bc-pp-icon d-none"></div>
+      <div class="bc-more d-none">+3</div>
+    </div>
+    <div class="col bc-action-icon">
+      <img class="d-none" src="/assets/svg/icon-dashboard-info.svg" />
+      <img (click)="onEdit()" src="/assets/svg/icon-edit.svg" />
+      <img (click)="onDelete(board)" src="/assets/svg/icon-remove.svg" />
+    </div>
+  </div>
+</div>
+
+<!-- edit board dialog -->
+<p-dialog
+  [modal]="true"
+  [styleClass]="'board-dialog'"
+  [(visible)]="showEditBoard"
+  [responsive]="true"
+  [transitionOptions]="'150ms'"
+  [baseZIndex]="baseZIndex"
+  [positionTop]="positionTop"
+  [header]="'Create New Board'"
+  [transitionOptions]="'150ms'">
+  <app-board-detail [board]="board" [aeMode]="2" (reloadEmitter)="onReload($event)"></app-board-detail>
+  <p-footer>
+    <button type="button" class="btn btn-create" [disabled]="!boardDetailComponent.form.valid" (click)="onBoardUpdate()">Update</button>
+    <button type="button" class="btn btn-cancel" (click)="showEditBoard=false">Cancel</button>
+  </p-footer>
+</p-dialog>

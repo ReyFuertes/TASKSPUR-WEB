@@ -1,0 +1,13 @@
+@mixin input-switch-red {
+   .ui-inputswitch-slider {
+    background-color: $color-red !important;
+  }
+  
+  .ui-inputswitch-focus .ui-inputswitch-slider {
+    background-color: $color-red !important;
+  }
+  
+  :not(.ui-state-disabled):hover .ui-inputswitch-slider {
+    background-color: $color-red !important;
+  }
+}

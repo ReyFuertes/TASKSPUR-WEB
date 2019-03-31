@@ -1,0 +1,254 @@
+@import "../../../../../styleguide/shared";
+
+.box {
+  padding: 0;
+  height: 550px;
+  width: 400px
+}
+
+.box-container {
+  max-width: 850px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: calc(100vh - 71%);
+}
+
+h3 {
+  color: $color-primary;
+}
+
+.login-content {
+  height: 520px;
+  margin-top: 10px;
+}
+
+.register-content {
+  margin-top: 10px;
+}
+
+.btn-signin {
+  max-width: 280px;
+  margin: 30px auto;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.btn-transparent {
+  &:hover {
+    color:$color-white;
+  }
+}
+
+.btn-transparent.btn-signup {
+  max-width: 200px;
+  height: 50px;
+  border-radius: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 15px;
+}
+
+.swap-container {
+  @include swap-container;
+  padding: 185px 45px 150px 45px;
+
+  h3 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+}
+
+:host ::ng-deep .ui-messages ul>li {
+  padding: 0;
+}
+
+:host ::ng-deep .ui-messages {
+  padding: 5px;
+}
+
+p-messages {
+  margin: 0 auto !important;
+}
+
+:host ::ng-deep .ui-messages {
+  width: 800px;
+
+  z-index: 999 !important;
+}
+
+@media (max-height: 1366px) {
+  .box-container {
+    padding-top: calc(100vh - 105%);
+  }
+}
+
+
+@media (max-height: 1080px) {
+  .box-container {
+    padding-top: calc(100vh - 71%);
+  }
+}
+
+@media (max-height: 1024px) {
+  .box-container {
+    padding-top: calc(100vh - 122%);
+  }
+}
+
+
+@media (max-height: 900px) {
+  .box-container {
+    padding-top: calc(100vh - 67%);
+  }
+}
+
+@media (max-height: 768px) {
+  .box-container {
+    padding-top: calc(100vh - 54%);
+  }
+}
+
+@media (max-height: 640px) {
+  .login-content,
+  .register-content {
+    height: calc(100vh - 84px);
+  }
+}
+
+@media (max-height: 568px) {
+  .login-content,
+  .register-content {
+    height: calc(100vh - 59px);
+  }
+}
+
+@media (max-width: 1000px) {
+  :host ::ng-deep .ui-messages {
+    width: 400px;
+  }
+
+  .login-content {
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .message-box {
+    margin: 0;
+  }
+
+  .box {
+    left: 0 !important;
+    width: 450px;
+    height: auto;
+  }
+
+  .box-container {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .login-content,
+  .register-content {
+    padding: 55px;
+  }
+
+  .swap-container {
+    background-image: url("/assets/svg/footer-bg.svg");
+    background-repeat: no-repeat;
+    height: 130px;
+    background-size: cover;
+    padding: 25px;
+
+    h3,
+    p {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 678px) {
+  .swap-container {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    left: 0 !important;
+    width: 100%;
+    height: auto;
+  }
+
+  .box-container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    padding: 0 !important;
+  }
+
+  .login-content,
+  .register-content {
+    padding: 25px 30px;
+    width: 100%;
+    height: calc(100vh - 100px);
+    margin-top: 0;
+  }
+  
+}
+
+@media (max-width: 420px) {
+  .swap-container {
+    padding: 33px 28px 37px 28px;
+  }
+
+  .btn-transparent.btn-signup {
+    margin-top: 0px;
+  }
+
+  .login-content {
+    height: calc(100vh - 110px);
+  }
+
+  .register-content {
+    height: calc(100vh - 120px);
+  }
+}
+
+@media (max-width: 375px) {
+  .box-container {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 375px;
+
+    .box {
+      width: 375px;
+    }
+  }
+}
+
+@media (max-width: 360px) {}
+
+@media (max-width: 320px) {
+  .box-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .login-content {
+    height: calc(100vh - 40px);
+  }
+
+  .register-content {
+    height: calc(100vh - 49px);
+  }
+}

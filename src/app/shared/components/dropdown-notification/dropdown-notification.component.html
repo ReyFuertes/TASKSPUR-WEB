@@ -1,0 +1,15 @@
+<ul class="shared-dropdown-notification">
+  <li *ngFor="let link of menuItem" class="router-link-item"> 
+    <a href="javascript:void(0)" (click)="gotoRoute(link)">
+      <i class="{{link.icon}}  {{link.bgColor}}"></i>
+      <span>{{link.text}}</span>
+      <span class="action-label">{{link.action}}</span>
+    </a>
+  </li>
+
+  <li class="router-link-item"> 
+    <a href="javascript:void(0)">
+      <span class="all-notification">SEE ALL NOTIFICATIONS</span>
+    </a>
+  </li>
+</ul>

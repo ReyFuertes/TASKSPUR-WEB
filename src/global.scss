@@ -1,0 +1,349 @@
+@import "./styleguide/shared";
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+
+body {
+  font-family: $font-family-base;
+  color: $font-base-color;
+  width: 100%;
+  // height: 100vh;
+  min-width: 320px;
+  // padding-top: 80px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-shadow: none;
+  font-weight: 550;
+}
+
+span {
+  color: $color-black;
+}
+
+p {
+  color: $color-standard;
+}
+
+.ui-dialog-titlebar {
+  border: 1px solid $color-primary !important;
+  background-color: $bg-primary !important;
+
+  .ui-dialog-title {
+    color: $color-white !important;
+  }
+}
+
+.ui-widget {
+  font-family: $font-family-base !important;
+}
+
+.fa-trash-alt {
+  color: $color-red;
+}
+
+label {
+  color: $color-standard;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.color-red {
+  color: $color-red;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.fa-times {
+  cursor: pointer;
+}
+
+.h-35 {
+  height: 35px;
+}
+
+.form-control {
+  font-size: 14px;
+  color: #000;
+}
+
+*:focus {
+  outline: none;
+}
+
+.atm-container::-webkit-scrollbar,
+.ui-multiselect-items-wrapper::-webkit-scrollbar,
+.ui-dialog-content.ui-widget-content::-webkit-scrollbar {
+  width: 5px;
+  margin: 5px;
+  height: 8px;
+}
+
+/* Track */
+.atm-container::-webkit-scrollbar-track,
+.ui-multiselect-items-wrapper::-webkit-scrollbar-track,
+.ui-dialog-content.ui-widget-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #e5f5ff;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+/* Handle */
+.atm-container::-webkit-scrollbar-thumb,
+.ui-multiselect-items-wrapper::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: $color-lighter-gray;
+  -webkit-box-shadow: inset 0 0 6px $color-light-gray;
+}
+
+.atm-container::-webkit-scrollbar-thumb:window-inactive,
+.ui-multiselect-items-wrapper::-webkit-scrollbar-thumb:window-inactive {
+  background: $color-lighter-gray;
+}
+
+.ui-dialog-content.ui-widget-content::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 0;
+  background: $color-lighter-gray;
+  -webkit-box-shadow: inset 0 0 6px $color-gray-clear;
+}
+
+.ui-dialog-content.ui-widget-content::-webkit-scrollbar-thumb:window-inactive {
+  background: $color-gray-clear;
+}
+
+.ui-toast-close-icon {
+  display: none !important;
+}
+
+.ui-toast-message.ui-toast-message-info {
+  background-color: $bg-primary !important;
+
+  .ui-toast-detail {
+    color: $color-white !important;
+  }
+
+  .ui-toast-icon {
+    color: $color-white !important;
+  }
+}
+
+.ui-toast-message.ui-toast-message-error {
+  background-color: $bg-red !important;
+
+  .ui-toast-detail {
+    color: $color-white !important;
+  }
+
+  .ui-toast-icon {
+    color: $color-white !important;
+  }
+}
+
+.ts_badge-red {
+  @include badge-red;
+}
+
+.ts_button-rounded {
+  @include btn-gradient-blue;
+}
+
+.ts_button {
+  @include btn-blue;
+
+  min-width: 120px;
+}
+
+.btn-transparent {
+  @include btn-transparent;
+}
+
+.link {
+  @include link-variant($color-standard);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.floating-label {
+  @include floating-label;
+}
+
+input[type=email].ts_input-email {
+  @include input-email;
+}
+
+input[type=password].ts_input-password {
+  @include input-password;
+}
+
+input[type=text].ts_input-password {
+  @include input-password;
+}
+
+.login-content,
+.register-content {
+  @include auth-container;
+}
+
+.error-hint {
+  @include error-hint;
+  text-align: left;
+  position: relative;
+  top: -20px;
+}
+
+.control-invalid {
+  color: $color-error !important;
+}
+
+.card-web {
+  @include card-web;
+}
+
+.btn-cancel {
+  @include btn-default;
+
+  margin-right: 5px;
+  padding: 10px;
+}
+
+.btn-create {
+  @include btn-gradient-blue;
+
+  padding: 10px 0;
+}
+
+.ui-toast .ui-toast-message.ui-toast-message-success {
+  background-color: #28a745 !important;
+  color: #fff !important;
+
+  .ui-toast-icon {
+    color: #fff !important;
+  }
+
+  .ui-toast-close-icon {
+    color: #fff !important;
+  }
+}
+
+span.ui-messages-icon.pi-times {
+  display: none !important;
+}
+
+span.ui-messages-summary {
+  color: $color-red;
+  font-weight: normal !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $color-light-gray !important;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $color-light-gray !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $color-light-gray !important;
+}
+
+.ui-confirmdialog {
+  @include confirm-dialog;
+}
+
+.ui-dialog {
+  .ui-dialog-footer button {
+    width: 160px !important;
+  }
+
+  .ui-dialog-titlebar-icon span {
+    color: $color-white;
+  }
+}
+
+.ui-overlaypanel .ui-overlaypanel-content {
+  padding: 10px 10px 0 !important;
+}
+
+body .ui-inputtext.ng-dirty.ng-invalid,
+body p-dropdown.ng-dirty.ng-invalid>.ui-dropdown,
+body p-autocomplete.ng-dirty.ng-invalid>.ui-autocomplete>.ui-inputtext,
+body p-calendar.ng-dirty.ng-invalid>.ui-calendar>.ui-inputtext,
+body p-chips.ng-dirty.ng-invalid>.ui-inputtext,
+body p-inputmask.ng-dirty.ng-invalid>.ui-inputtext,
+body p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box,
+body p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box,
+body p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch,
+body p-listbox.ng-dirty.ng-invalid .ui-inputtext,
+body p-multiselect.ng-dirty.ng-invalid>.ui-multiselect,
+body p-spinner.ng-dirty.ng-invalid>.ui-inputtext,
+body p-selectbutton.ng-dirty.ng-invalid .ui-button,
+body p-togglebutton.ng-dirty.ng-invalid .ui-button {
+  border: none !important;
+}
+
+// media queries for p-dialog
+@media (min-height: 900px) {
+  .ui-dialog-content.ui-widget-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #e5f5ff;
+    margin: 0;
+  }
+
+  .ui-dialog .ui-dialog-content {
+    width: 800px;
+  }
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 600px) {
+  .ui-dialog-content.ui-widget-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #e5f5ff;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 0;
+  }
+
+  .ui-dialog {
+    .ui-dialog-footer button {
+      width: 130px !important;
+    }
+  }
+
+  .ui-confirmdialog.ui-dialog .ui-dialog-footer {
+    padding: 20px 0 !important;
+  }
+
+  .ui-confirmdialog.ui-dialog .ui-dialog-footer button {
+    max-width: 125px !important;
+  }
+}

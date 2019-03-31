@@ -1,0 +1,24 @@
+@mixin modal {
+  -webkit-transform: translate(0, -30%);
+  -o-transform: translate(0, -30%);
+  transform: translate(0, -30%);
+
+  .modal-content {
+    border: none;
+
+    .modal-body {
+      padding: 0;
+    }
+
+    .modal-header {
+      background-color: $bg-primary;
+
+      color: $color-white;
+
+      button.close span {
+        color: $color-white;
+      }
+    }
+  }
+
+}

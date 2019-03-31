@@ -1,0 +1,27 @@
+<nav id="sidebar">
+    <div class="sidebar-header">
+      <div  class="sidebar-header-text" (click)="toggleSidebar()">
+        TaskSpur
+      </div>
+
+      <div class="navbar nav-right">
+          <a href="javascript:void(0)" class="nav-link nav-signin" (click)="gotoLogin()">SIGN IN</a>
+          <i class="fas fa-times" (click)="toggleSidebar()"></i>
+      </div>
+    </div>
+  
+    <ul class="list-unstyled components sidebar-links">
+      <li *ngFor="let link of menuLinks" class="router-link-item-sb {{ link.classRoute }}"> 
+        <a href="javascript:void(0)" (click)="gotoRoute($event, link)">{{link.text}}</a>
+      </li>
+
+      <li class="router-link-item-sb"> 
+          <a href="javascript:void(0)" (click)="gotoLogin()">REGISTER NOW!</a>
+        </li>
+    </ul>
+  
+    <div class="sidebar-copyright">
+      &copy; Copyright TaskSpur 2019. A Life Intelligence Group Subsidiary. All Rights Reserved
+    </div>
+  
+  </nav>

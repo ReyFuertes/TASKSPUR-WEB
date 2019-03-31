@@ -1,0 +1,21 @@
+<div class="nav-container">
+  <nav class="navbar navbar-expand-lg">
+    <div>
+      <span class="navbar-brand">TaskSpur</span>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li *ngFor="let link of menuLinks" class="nav-item router-link-item {{ link.classRoute }}" [ngClass]="{'active': link.text=='INTRODUCTION'}">
+          <a href="javascript:void(0)" class="nav-link" (click)="gotoRoute($event, link)">{{ link.text }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar nav-right">
+      <a href="javascript:void(0)" class="nav-link nav-signin" (click)="gotoLogin()">SIGN IN</a>
+      <i class="fas fa-bars fa-2x" (click)="toggleSidebar()"></i>
+    </div>
+  </nav>
+
+</div>

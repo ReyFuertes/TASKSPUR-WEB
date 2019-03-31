@@ -1,0 +1,254 @@
+@import "../../../../../styleguide/shared";
+
+.subscription {
+  background-image: linear-gradient(134deg, #8000FF, #00C4FF);
+  text-align: center;
+  padding: 130px 0;
+  
+  .no-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .subs-text-header{
+    @include heading-small;
+    margin-bottom: 0px;
+  }
+
+  .subs-title {
+    @include heading-primary;
+    color: $color-white;
+    text-align: center
+  }
+
+  .subs-sub-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    max-width: 625px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  .subs-price {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+ 
+    .price-table {
+      background: #fff;
+      -webkit-box-shadow: 0 0rem 7rem rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0rem 2rem rgba(0, 0, 0, 0.1);
+
+      .price-table-header {
+        color: #fff;
+
+        span {
+          display: block;
+          padding-top: 25px;
+          color: #fff;
+        }
+
+        h3 {
+          padding-bottom: 20px;
+          margin: 0;
+          font-size: 56px;
+          font-weight: 700;
+
+          sup {
+            font-size: 26px;
+            position: relative;
+            top: -25px;
+            margin-right: 5px;
+          }
+
+          sub {
+            font-size: 20px;
+            margin-left: 5px;
+          }
+        }
+
+        .in-app {
+          font-size: 36px;
+        }
+      }
+
+      .price-table-content {
+        padding: 30px 36px;
+        position: relative;
+        overflow: hidden;
+
+        ul {
+          list-style-type: none;
+          padding-left: 0;
+          font-size: 18px;
+          text-align: left;
+          
+
+          li {
+            margin: 0;
+            padding: 8px 0;
+           
+            div {
+              display: inline-flex;
+
+            }
+            .fas {
+              color: #0099FF;
+              margin-right: 20px;
+            }
+
+            .fas.no-ads {
+              color: #99CC66;             
+            }
+            .fas.community {
+              color: #FF6060;             
+            }
+          }
+
+        }
+
+
+      }
+
+      .price-table-header.free, .price-table-footer.free {
+        background: #0099FF;
+      }
+
+      .price-table-header.no-ads, .price-table-footer.no-ads {
+        background: #99CC66;
+      }
+
+      .price-table-header.community, .price-table-footer.community {
+        background: #FF6060;
+      }
+
+      .price-table-footer {
+        padding: 24px 0;
+      }
+
+      .small-title-footer {
+        color: #fff;
+        font-size: 18px;
+      }
+
+
+    }
+
+    .price-table.no-ads {
+      transform: translateY(-40px);
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 3px 40px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.2), 0 1px 8px 0 rgba(0,0,0,.12);
+    }
+
+  }
+}
+
+@media (max-width: 1600px) {
+  
+}
+
+@media (max-width: 1500px) {
+  
+
+}
+
+@media (max-width: 1367px) {
+  .subscription {
+    .subs-price {
+      max-width: 1100px;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .subscription {
+    .subs-price {
+      max-width: 1000px;
+
+      .price-table {
+        .price-table-content {
+          ul {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .subscription {
+    .subs-price {
+      padding-left: 36px;
+      padding-right: 36px;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  
+}
+
+@media (max-width: 767px) {
+  .subscription {
+    padding: 80px 0;
+
+    .subs-text-header{
+     display: none;
+    }
+
+    .subs-text-header{
+      font-size: 17px;
+    }
+  
+    .subs-title {
+      font-size: 36px;
+    }
+
+    .subs-price {
+      padding-left: 36px;
+      padding-right: 36px;
+      margin-top: 50px;
+
+      .price-table {
+        margin-bottom: 30px;
+      }
+
+      .price-table.no-ads {
+        transform: translateY(0px);
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .subscription {
+
+    .subs-sub-title {
+      max-width: 325px;
+    }
+
+    .subs-price {
+      .price-table {
+        margin-bottom: 30px;
+
+        .price-table-header.in-app {
+          font-size: 30px;
+        }
+
+        .price-table-content {
+          ul {
+            li {
+              padding: 3px 0;
+            }
+          }
+        }
+
+        .small-title-footer {
+          font-size: 16px;
+        }
+
+      }
+    }
+  }
+}

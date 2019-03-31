@@ -1,0 +1,162 @@
+@mixin card($size: normal) {
+  background-color: $bg-white-clear;
+  box-shadow: $box-shadow;
+
+  padding: 20px;
+  border-radius: 4px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+@mixin board-card {
+  box-shadow: $box-shadow;
+  border: thin #eee solid;
+  max-width: 270px;
+  min-width: 270px;
+  margin: 0 auto;
+  height: 140px;
+
+  .bc-content {
+    height: calc(100% - 45px);
+    padding: 10px 10px 15px 15px;
+    margin: 0;
+
+    .bc-title {
+      // height: auto;
+      // margin-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    h5 {
+      color: $color-primary;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .col-4 {
+      padding: 5px;
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+
+    .col {
+      padding: 5px 0 5px 5px;
+    }
+  }
+
+  .bc-icon {
+    width: 66px;
+    height: 66px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #F4F8FD;
+    padding: 18px;
+  }
+
+  .bc-footer {
+    background: #F4F8FD;
+    height: 45px;
+    padding: 10px;
+    border-top: thin $border-line-color solid;
+
+    .bc-more {
+      font-size: 12px;
+      padding: 5px 0;
+      color: $color-gray;
+      font-weight: bold;
+    }
+
+    .bc-action-icon {
+      padding: 0;
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    .bc-icon-container {
+      cursor: pointer;
+
+      .bc-pp-icon {
+        height: 26px;
+        width: 26px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+
+        &:nth-child(1) {
+          position: relative;
+          background-image: url('/assets/images/sample/pp1.jpg');
+          border: 2px $color-primary solid;
+        }
+
+        &:nth-child(2) {
+          left: 10px;
+          position: relative;
+          background-image: url('/assets/images/sample/pp2.jpg');
+          z-index: 100;
+          border: 2px $color-white solid;
+        }
+
+        &:nth-child(3) {
+          position: relative;
+          background-image: url('/assets/images/sample/pp3.jpg');
+          z-index: 99;
+          border: 2px $color-white solid;
+        }
+      }
+    }
+  }
+}
+
+@mixin formCard {
+  @include card;
+
+  width: 370px;
+
+  .form-card-header {
+    padding: 10px;
+  }
+
+  .form-card-content {
+    padding-top: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  h3 {
+    color: $color-standard;
+  }
+
+  .btn-blue {
+    @include btnBlue;
+  }
+}
+
+@mixin card-bg {
+  background-color: $bg-white-clear;
+  margin: 0 auto;
+  background-image: url('/assets/svg/card-bg.svg');
+}
+
+@mixin divCard {
+  @include card;
+
+}
+
+@mixin card-web {
+  @include card;
+  padding: 10px 40px 40px;
+  border: thin #dde solid;
+
+  .card-web-header {
+    border-bottom: thin #ccc solid;
+    padding: 10px 15px;
+    font-size: 22px;
+    background: $bg-white-clear;
+  }
+}

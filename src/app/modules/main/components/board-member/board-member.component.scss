@@ -1,0 +1,95 @@
+@import '../../../../../styleguide/shared';
+
+.member-card {
+  height: 270px;
+  width: 220px;
+  border: thin #E4E4E4 solid;
+  border-radius: 4px;
+  margin: 7px;
+
+  &:first-child {
+    border: 2px $color-primary solid;
+  }
+
+  .mc-header {
+    i {
+      float: right;
+      height: 29px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .fa-trash-alt {
+      color: #FF6060;
+    }
+
+    .fa-exchange-alt {
+      color: $color-primary;
+    }
+  }
+
+  .mc-image {
+    height: 100px;
+    width: 100px;
+    background: #CCC;
+    border-radius: 50%;
+    margin: 0 auto;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .mc-name p {
+    color: $color-primary;
+    font-weight: 600;
+    margin: 0 auto;
+    text-align: center
+  }
+
+  .mc-title p {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 auto;
+    text-align: center
+  }
+}
+
+.mc-footer {
+  height: 65px;
+  background: #F4F8FD;
+  margin: 0;
+  padding: 10px;
+
+  p {
+    font-size: 10px;
+    text-align: center;
+    width: 116px;
+    margin: 0 auto;
+    color: #999;
+  }
+}
+
+.member-card-new {
+  height: 270px;
+  width: 220px;
+  border: thin $color-primary dotted;
+  border-radius: 4px;
+  padding-top: 29px;
+  margin: 7px;
+
+  .mc-plus {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: #e5f5ff;
+    margin: 50px auto;
+
+    i {
+      font-size: 50px;
+      font-weight: 550;
+      padding: 24px 29px;
+      color: $color-primary;
+    }
+  }
+}

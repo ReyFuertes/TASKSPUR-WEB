@@ -1,0 +1,8 @@
+<ul class="shared-dropdown-menu">
+  <li *ngFor="let link of menuItem" class="router-link-item"> 
+    <a href="javascript:void(0)" (click)="gotoRoute(link)"><i class="{{link.icon}}"></i> {{link.text}}</a>
+  </li>
+  <li class="router-link-item"> 
+    <a href="javascript:void(0)" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Signout</a>
+  </li>
+</ul>

@@ -1,0 +1,65 @@
+
+<form novalidate [formGroup]="registerForm" (ngSubmit)="register()">
+  <h3>Create an Account</h3>
+  <div class="floating-label group">
+    <input class="ts_input-email" #email type="email" formControlName="email" name="email" autocomplete="off" tabindex="1" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Email</label>
+    <i *ngIf="registerForm.get('email').dirty" (click)="onClear()" class="fas fa-times icon-email-error"></i>
+  </div>
+
+  <div class="floating-label group">
+    <input class="ts_input-password" #pwd (blur)="validatePassword()" formControlName="password" name="password" type="password" autocomplete="off"
+        tabindex="2" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label [ngClass]="{'control-invalid': !registerForm.get('password').valid && registerForm.get('password').dirty }">Password</label>
+    <i (click)="showPassword(pwd)" class="fas fa-eye icon-password-view"></i>
+  </div>
+
+  <div class="floating-label group mb-0">
+    <input #rpwd class="ts_input-password" type="password" (blur)="validateRePassword()" valCompare="password" formControlName="repeatPassword" tabindex="6" name="repeatpassword"
+        autocomplete="off" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label [ngClass]="{'control-invalid': !registerForm.get('repeatPassword').valid && registerForm.get('repeatPassword').dirty }">Repeat Password</label>
+    <i (click)="showPassword(rpwd)" class="fas fa-eye icon-password-view"></i>
+  </div>
+
+  <div class="row terms-privacy-container">
+    <p-checkbox formControlName="termsPolicy" binary="true" (click)="onAgreeToTermsPolicy()" [tabIndex]="8"></p-checkbox>
+    <div>
+      <span (click)="showTermsCondition = !showTermsCondition" class="link">Terms and Conditions</span>
+      <span> | </span>
+      <span (click)="showPrivacyPolicy = !showPrivacyPolicy" class="link">Privacy Policy</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <button [disabled]="!registerForm.valid || isSubmitting" class="btn ts_button-rounded btn-signup"> 
+    <i *ngIf="isSubmitting" class="fas fa-spinner fa-pulse"></i> SIGN UP</button> 
+  </div>
+  
+  <div class="social-container">
+    <fieldset>
+      <legend><h6>OR LOGIN WITH</h6></legend>
+    </fieldset>
+    <div class="social-icons">
+      <app-google-login></app-google-login>
+      <app-facebook-login></app-facebook-login>
+    </div>
+  </div>
+</form>
+
+<app-base-modal [showModal]="showTermsCondition" [headerText]="'Terms and Conditions'" (closeModal)="showTermsCondition = $event;" [contentStyle]="{'max-height':'calc(100vh - 200px)', 'max-width': '800px'}">
+  <ng-container class="body">
+    <app-terms-condition [isRawText]="true" ></app-terms-condition>
+  </ng-container>
+</app-base-modal>
+
+<app-base-modal [showModal]="showPrivacyPolicy" [headerText]="'Website Privacy Policy'" (closeModal)="showPrivacyPolicy = $event;" [contentStyle]="{'max-height':'calc(100vh - 200px)', 'max-width': '800px'}">
+  <ng-container class="body">
+    <app-privacy-policy [isRawText]="true"></app-privacy-policy>
+  </ng-container>
+</app-base-modal>

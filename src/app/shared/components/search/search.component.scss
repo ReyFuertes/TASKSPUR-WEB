@@ -1,0 +1,23 @@
+@import '../../../../styleguide/shared';
+
+:host {
+  input {
+    display: inline-block;
+    width: 100%;
+    border-radius: 20px;
+    height: 40px;
+    padding-left: 35px;
+
+    &:focus ~ .fa-search {
+      color: $color-primary;
+    }
+  }
+
+  .fa-search {
+    position: absolute;
+    z-index: 999;
+    top: 12px;
+    left: 11px;
+    color: $color-light-gray;
+  }
+}

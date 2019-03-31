@@ -1,0 +1,15 @@
+<div class="wrapper" [ngClass]="{ toggled: showSidebar == true }">
+  <div class="sidebar-wrapper" [ngClass]="{ toggled: showSidebar == true }">
+      <app-sidebar (activeMenuEmitter)="activeMenu = $event" (showSidebarEmitter)="handleShowSidebar()"></app-sidebar>
+  </div>
+
+  <div class="content-wrapper" >
+    <app-topnav [activeMenu]="activeMenu" (showSidebarEmitter)="handleShowSidebar()"></app-topnav>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="footer">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

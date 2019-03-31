@@ -1,0 +1,66 @@
+@import '../../../../styleguide/shared';
+
+:host ::ng-deep .ui-chkbox-label {
+  top: 0;
+  left: auto;
+}
+
+:host ::ng-deep p-calendar.ui-inputwrapper-filled~label {
+  top: -10px;
+  font-size: 12px;
+  color: $color-primary;
+  font-weight: bold;
+}
+
+:host ::ng-deep .ui-corner-all {
+  border-radius: 0;
+}
+
+:host ::ng-deep p-calendar a.ui-state-active {
+  background: $color-primary !important;
+}
+
+:host ::ng-deep p-calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-title select {
+  border-radius: 3px;
+}
+
+.ui-inputtext.ng-dirty.ng-invalid,
+p-dropdown.ng-dirty.ng-invalid>.ui-dropdown,
+p-autocomplete.ng-dirty.ng-invalid>.ui-autocomplete>.ui-inputtext,
+p-calendar.ng-dirty.ng-invalid>.ui-calendar>.ui-inputtext,
+p-chips.ng-dirty.ng-invalid>.ui-inputtext,
+p-inputmask.ng-dirty.ng-invalid>.ui-inputtext,
+p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box,
+p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box,
+p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch,
+p-listbox.ng-dirty.ng-invalid .ui-inputtext,
+p-multiselect.ng-dirty.ng-invalid>.ui-multiselect,
+p-spinner.ng-dirty.ng-invalid>.ui-inputtext,
+p-selectbutton.ng-dirty.ng-invalid .ui-button,
+p-togglebutton.ng-dirty.ng-invalid .ui-button {
+  border: none;
+}
+
+img {
+  position: absolute;
+  top: 13px;
+  right: 2px;
+  color: $color-primary;
+  cursor: pointer;
+}
+
+p-calendar.ng-dirty~img {
+  color: $color-primary;
+}
+
+
+@media (max-width:480px) {
+  :host ::ng-deep .ui-datepicker {
+    left: 0px;
+    top:36px;
+  }
+
+  :host ::ng-deep .ui-datepicker table td {
+    padding: 0;
+  }
+}

@@ -1,0 +1,5 @@
+@import '../../../../styleguide/shared';
+
+.modal {
+  @include modal;
+}

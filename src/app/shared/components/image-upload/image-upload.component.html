@@ -1,0 +1,29 @@
+<div *ngIf="parentForm" [formGroup]="parentForm" class="row lpa_upload-container" (dragover)="isDropping = true"
+  (dragleave)="isDropping = false">
+  <div appDnd [ngClass]="isDropping ? 'border-dashed' : ''" (filesChangeEmiter)="onFilesChange($event)" (dragover)="isDropping = true"
+    (dragleave)="isDropping = false" class="col-12 upload-container">
+    <div *ngIf="(!data.image && !imageDisplayUrl) || isDropping" class="row lpa_upload-image-container">
+      <div>
+        <i class="far fa-image fa-2x"></i>
+        <p class="caption">Drag your image file here.</p>
+      </div>
+    </div>
+
+    <div *ngIf="(data.image || imageDisplayUrl) && !isDropping" class="img-container">
+      <img [@enterAnimation]="" *ngIf="data.image || imageDisplayUrl" [src]="data.image ? data.image : imageDisplayUrl"
+        [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+    </div>
+  </div>
+
+  <div class="col-12 lpa_upload-btn">
+    <input #profileImage type="file" id="image" formControlName="image" (change)="fileChangeListener($event)" accept="image/png,image/jpg,image/jpeg" />
+  </div>
+</div>
+
+<p-dialog header="Image Cropper" [(visible)]="showCroppingDialog" positionTop="20" [responsive]="true"
+  showEffect="fade" responsive="true">
+  <img-cropper #cropper [image]="data" [settings]="cropperSettings" (onCrop)="cropped($event)"></img-cropper>
+  <p-footer>
+    <button type="button" class="btn btn-default lpa_btn" (click)="showCroppingDialog = false">Done</button>
+  </p-footer>
+</p-dialog>

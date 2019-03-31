@@ -1,0 +1,149 @@
+@mixin btn {
+  height: 40px;
+  border: none;
+  font-size: 14px;
+  text-shadow: $text-shadow;
+  max-width: 160px;
+
+  &:disabled {
+    background: #ccc;
+    color: #888;
+  }
+
+  &:focus:not(:disabled),
+  &:hover:not(:disabled) {
+    outline: 0;
+    box-shadow: none;
+    opacity: 0.8;
+  }
+}
+
+@mixin btn-rounded {
+  border-radius: 20px;
+}
+
+@mixin btn-gradient-blue {
+  @include btn;
+  @include btn-rounded;
+
+  background: $gradient-blue;
+  color: $color-white;
+  width: 100%;
+}
+
+@mixin btn-blue {
+  @include btn;
+
+  background: $gradient-blue;
+  color: $color-white;
+  width: 100%;
+}
+
+@mixin btn-transparent {
+  @include btn;
+  @include btn-rounded;
+
+  background: transparent;
+  color: $color-white;
+  border: thin $color-white solid;
+  width: 100%;
+}
+
+@mixin btn-default {
+  @include btn;
+  @include btn-rounded;
+
+  background: $color-white;
+  color: $color-standard;
+  border: thin $color-lighter-gray solid;
+  width: 100%;
+  text-shadow: none;
+}
+
+@mixin btn-danger {
+  @include btn;
+  @include btn-rounded;
+
+  background: $color-white;
+  color: $color-red;
+  border: thin #fc8181 solid;
+  margin: 2px;
+
+  &.active {
+    background: $color-red;
+    color: $color-white;
+    border-color: $color-red;
+  }
+}
+
+@mixin btn-info {
+  @include btn;
+  @include btn-rounded;
+
+  background: $color-info;
+  color: $color-white;
+  border: thin $color-info solid;
+  margin: 2px;
+
+  &.active {
+    background: $color-info;
+    color: $color-white;
+    border-color: $color-info;
+  }
+}
+
+@mixin btn-primary {
+  @include btn;
+  @include btn-rounded;
+
+  background: $color-primary;
+  color: $color-white;
+  border: thin $color-primary solid;
+  margin: 2px;
+
+  &.active {
+    background: $color-primary;
+    color: $color-white;
+    border-color: $color-primary;
+  }
+}
+
+@mixin btn-secondary {
+  @include btn;
+  @include btn-rounded;
+
+  background: $color-secondary;
+  color: $color-white;
+  border: thin $color-secondary solid;
+  margin: 2px;
+
+  &.active {
+    background: $color-secondary;
+    color: $color-white;
+    border-color: $color-secondary;
+  }
+}
+
+@mixin btn-warning {
+  @include btn;
+  @include btn-rounded;
+
+  background: $color-warning;
+  color: $color-white;
+  border: thin $color-warning solid;
+  margin: 2px;
+
+  &.active {
+    background: $color-warning;
+    color: $color-white;
+    border-color: $color-warning;
+  }
+}
+
+@mixin btn-save {
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 8px 30px;
+  border-radius: 3px;
+  background: $bg-blue;
+}

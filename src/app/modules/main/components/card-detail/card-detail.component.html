@@ -1,0 +1,181 @@
+<form *ngIf="form" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="card-detail-container">
+    <div class="row m-2">
+      <div class="col-md-7 mt-2">
+        <div class="field-container">
+          <div class="col-md-12">
+            <div class="floating-label group">
+              <input type="text" id="name" maxlength="255" formControlName="name" name="name" autocomplete="off" tabindex="0" autofocus required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Card Name <span class="color-red">*</span></label>
+            </div>
+          </div>
+
+          <div class="col-md-12 mb-4 h-35">
+            <app-dropdown
+              *ngIf="formattedBoards"
+              [parentForm]="form"
+              [items]="formattedBoards"
+              [label]="'Board'"
+              [controlName]="'boardId'"
+              [isRequired]="'true'"></app-dropdown>
+          </div>
+
+          <div class="col-md-12 mb-4 h-35">
+            <div class="floating-label group">
+              <app-datepicker
+                [label]="'Date'"
+                [parentForm]="form"
+                [isRequired]="'true'"
+                [controlName]="'expectedCompletion'">
+              </app-datepicker>
+            </div>
+          </div>
+
+          <div
+            class="col-md-12 mb-4 h-35">
+            <app-dropdown
+              *ngIf="cardStatus"
+              [parentForm]="form"
+              [items]="cardStatus"
+              [label]="'Status'"
+              [placeholder]="'Status'"
+              [controlName]="'status'"></app-dropdown>
+          </div>
+        </div>
+
+        <div class="col-md-12 mb-4">
+          <div class="form-group">
+            <label
+              class="font-weight-bold"
+              for="details">Description</label>
+            <textarea
+              class="form-control"
+              rows="5"
+              formControlName="details"
+              name="details"
+              autofocus></textarea>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-5">
+        <div class="col-12 mt-3 p-0">
+          <label class="text-bold">Members</label>
+        </div>
+
+        <div class="row cdm-container m-auto">
+          <div class="col-md-12 mr-1">
+            <div class="row cdm-row">
+              <div class="col-3 cdm-img">
+                <img src="/assets/images/sample/m1.png" />
+              </div>
+              <div class="col cdm-name">Jimmy Chong</div>
+              <div class="col-2 cdm-action-icon">
+                <img src="/assets/svg/icon-swap.svg" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mr-1">
+            <div class="row cdm-row">
+              <div class="col-3 cdm-img">
+                <img src="/assets/images/sample/m2.png" />
+              </div>
+              <div class="col cdm-name">Vanessa Lin</div>
+              <div class="col-2 cdm-action-icon">
+                <img src="/assets/svg/icon-remove.svg" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mr-1">
+            <div class="row cdm-row">
+              <div class="col-3 cdm-img">
+                <img src="/assets/images/sample/m3.png" />
+              </div>
+              <div class="col cdm-name">James Parker</div>
+              <div class="col-2 cdm-action-icon">
+                <img src="/assets/svg/icon-remove.svg" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 mt-3 p-0">
+          <label class="text-bold">Priority</label>
+
+          <div class="cmp-container m-auto">
+            <div class="row">
+              <div class="col-3 input-switch-red">
+                <p-inputSwitch formControlName="important" binary="true"></p-inputSwitch>
+              </div>
+              <div class="col pl-0"><label class="d-inline float-left">Important</label></div>
+            </div>
+            <div class="row">
+              <div class="col-3 input-switch-red">
+                <p-inputSwitch formControlName="urgent" binary="true"></p-inputSwitch>
+              </div>
+              <div class="col pl-0"><label class="d-inline float-left">Urgent</label></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-3 p-0">
+          <label class="text-bold">Level of Difficulty</label>
+          <div class="cmp-container m-auto">
+            <app-radio-of-difficulty
+              *ngIf="form"
+              [parentForm]="form"
+              [controlName]="'point'"
+              (pointValueEmitter)="handlePointValue($event)"></app-radio-of-difficulty>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m-0 d-none">
+      <app-attachment (attachmentsEmitter)="handleAttachments($event)"></app-attachment>
+    </div>
+
+    <!-- <app-quill-editor #editor [parentForm]="formComment" [controlName]="'comment'"></app-quill-editor> -->
+
+    <div *ngIf="aeMode === 2" class="col-12 mt-5 comment-text">
+      <label class="text-bold">Comments (2)</label>
+      <textarea
+        rows="5"
+        class="form-control"></textarea>
+    </div>
+
+    <div *ngIf="aeMode === 2" class="col-12 wysiwyg-editor">
+      <div class="add-comment">
+        <a
+          href="javascript:void(0)"
+          class="btn btn-add-comment"
+          tabindex="-1">Add Comment</a>
+      </div>
+
+      <div class="comment-box mt-4">
+        <div
+          class="row comment-box-row"
+          *ngFor="let number of [0,1,2,3]">
+          <div class="col-3 col-md-2">
+            <div class="cb-img">
+              <img src="/assets/images/sample/m1.png" />
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="cb-head">
+              <h5>Robert Berkham</h5>
+              <p class="small-text time-added">Added 1 hour ago</p>
+              <div class="cb-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porttitor vel libero vulputate. Nulla a gravida metus. Vestibulum vel ligula eget arcu egestas.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

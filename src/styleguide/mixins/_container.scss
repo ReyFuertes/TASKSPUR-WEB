@@ -1,0 +1,79 @@
+
+
+
+@mixin main-container {
+  max-width: 1280px;
+}
+
+@mixin auth-container {
+  background: $color-white;
+  border-radius: 2px;
+  text-align: center;
+  padding: 35px 70px;
+
+  h3 {
+    margin-bottom: 35px;
+  }
+
+  .forgot-password-link {
+    font-size: 14px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .social-container {
+    text-align: center;
+    margin: 0 auto;
+
+    .social-icons {
+      text-align: center;
+      margin: 0 0 10px;
+    }
+
+    fieldset {
+      border: none;
+      border-top: 1px solid #ccc;
+      padding: 0 20%;
+    }
+
+    legend {
+      text-align: center;
+      width: auto;
+      border-bottom: none;
+      position: relative;
+      top: 2px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      h6 {
+        font-size: 14px;
+        color: #999;
+        background: #fff;
+        width: 130px;
+      }
+    }
+  }
+}
+
+@mixin swap-container {
+  width: 315px;
+  background: #ccc;
+  height: 540px;
+  position: relative;
+  background-image: url("/assets/images/desktop/sign-up-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 2px;
+  text-align: center;
+  padding: 160px 50px;
+
+  p {
+    color: $color-white;
+    font-size: 14px;
+    margin: 10px 0 20px;
+  }
+
+  h3 {
+    color: $color-white;
+  }
+}

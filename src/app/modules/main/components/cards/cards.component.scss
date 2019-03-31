@@ -1,0 +1,285 @@
+@import '../../../../../styleguide/shared';
+
+.list-view {
+  &.table thead th {
+    border: none;
+    font-size: 12px;
+    padding: 5px;
+    color: $color-light-gray;
+  }
+}
+
+.card-container {
+  @include main-container;
+  padding: 20px 0;
+
+  .card {
+    border: 1px solid $color-gray-clear;
+  }
+
+  h4 {
+    margin-bottom: 5px;
+  }
+
+  .btn-create {
+    @include btn-gradient-blue;
+    width: 100%;
+
+    text-shadow: $text-shadow;
+
+    .create-text {
+      display: block;
+      color: $color-white;
+    }
+  }
+
+  .dropdown-multiselect-filter {
+    display: block;
+  }
+
+  .btn-search-mobile {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+  }
+
+  .card-header {
+    cursor: pointer;
+
+    span {
+      color: $color-white;
+      width: 100.8%;
+      left: -1px;
+      text-shadow: $text-shadow;
+      position: relative;
+      top: 3px;
+    }
+
+    .card-count {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: $color-white;
+      padding: 3px 0;
+      font-size: 14px;
+      color: $color-primary;
+      position: relative;
+      top: 1px;
+      text-align: center;
+      text-shadow: none;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  .sort-container-web,
+  .sort-container-mobile {
+    img {
+      margin: 5px;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+  }
+
+  .sort-container-mobile {
+    margin-right: 10px;
+    font-size: 24px;
+    display: none;
+  }
+
+  .card-content-lg {
+    margin-top: 10px;
+    border-top: thin $color-lighter-gray solid;
+    padding: 10px;
+
+    .btn-create-mobile {
+      @include btn-gradient-blue;
+
+      height: 40px;
+      width: 40px;
+    }
+
+    .btn-filter-mobile {
+      @include btn-transparent;
+
+      border: thin $color-lighter-gray solid;
+      height: 40px;
+      width: 40px;
+      text-shadow: none;
+      color: $color-light-gray;
+    }
+
+    .ch-1 {
+      background: #197AF2;
+    }
+
+    .ch-2 {
+      background: #0099FF;
+    }
+
+    .ch-3 {
+      background: #00C2FF;
+    }
+
+    .ch-4 {
+      background: #0DDAFC;
+    }
+
+    .card-body {
+      background: #F4F8FD;
+      padding: 0;
+    }
+
+    .cs-web-container {
+      display: flex;
+    }
+
+    .cc-web-container {
+      display: flex;
+    }
+
+    .cc-mobile-container {
+      display: none;
+
+      .row {
+        min-width: 320px;
+        margin-left: -10px;
+        margin-right: -10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  ::ng-deep .ui-dialog {
+    width: 800px !important;
+  }
+}
+
+@media (max-width: 1179px) {
+  .card-accordion {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card-container {
+    .card-header {
+      width: 100.2%;
+    }
+
+    .btn-create {
+      max-width: 160px;
+      font-size: 12px;
+
+      .create-text {
+        display: block;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+@media (max-width: 710px) {
+  .card-container {
+    padding: 10px 0;
+
+    .sort-container-web {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 675px) {
+  .card-container {
+    .cs-web-container {
+      display: none;
+    }
+
+    .sort-container-mobile {
+      display: block;
+    }
+
+    .card-content-lg {
+
+      .cc-web-container {
+        display: none;
+      }
+
+      .cc-mobile-container {
+        display: flex;
+
+        .col-9 {
+          flex: 0 0 70%;
+          max-width: 70%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .card-container {
+    padding: 10px;
+
+    .sort-container-mobile {
+      margin-right: 0;
+    }
+
+    .card-header {
+      width: 100.5%;
+    }
+  }
+
+  .cc-mobile-container {
+    .row {
+      width: 100vw;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .card-container {
+    padding: 10px;
+
+    h4 {
+      margin-bottom: 0;
+    }
+
+    .card-content-lg {
+      .cc-mobile-container {
+        .row {
+          min-width: 320px;
+
+          .col-2.pr-1 {
+            padding-left: 7px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .card-container {
+    .card-content-lg {
+      .cc-mobile-container {
+        .col-9 {
+          flex: 0 0 66%;
+          max-width: 66%;
+        }
+
+        .row {
+          min-width: 310px;
+          max-width: 310px;
+
+
+          .col-2.pr-1 {
+            padding-left: 6px;
+          }
+        }
+      }
+    }
+  }
+}

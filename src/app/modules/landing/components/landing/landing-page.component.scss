@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+.wrapper {
+  font-family: 'Karla','Open Sans',serif;
+ 
+
+  .sidebar-wrapper {
+    display: none;
+  }
+
+  .content-wrapper {
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-width: 320px;
+
+    .header {
+      background: -moz-linear-gradient(left, #8000ff 0%, #6730ff 23%, #5d45ff 39%, #5654ff 52%, #4f63ff 64%, #4a6eff 80%, #3a91ff 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, #8000ff 0%,#6730ff 23%,#5d45ff 39%,#5654ff 52%,#4f63ff 64%,#4a6eff 80%,#3a91ff 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, #8000ff 0%,#6730ff 23%,#5d45ff 39%,#5654ff 52%,#4f63ff 64%,#4a6eff 80%,#3a91ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8000ff', endColorstr='#3a91ff',GradientType=1 ); /* IE6-9 */
+    }
+
+    #ari-chat{
+      position: fixed;
+      right: 40px;
+      bottom: 50px;
+      z-index: 999;
+    
+      img {
+        width: 65px;
+        opacity: 0.8;
+        transition: all .2s;
+        cursor: pointer;
+      }
+    
+      img:hover {
+        width: 70px;
+        opacity: 0.95;
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+        background: transparent;
+      }
+    }
+  
+  }
+}
+
+@media (max-width: 767px) {
+
+  .wrapper {
+    background: none;
+    padding-left: 0;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  
+    .sidebar-wrapper {
+      display: block;
+      z-index: 10000;
+      position: fixed;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      //margin-right: -280px;
+      overflow-y: auto;
+  
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+  
+    .sidebar-wrapper.toggled {
+      right: 0;
+    }
+  
+    .wrapper.toggled .sidebar-wrapper {
+      width: 100%;
+    }
+  
+    .content-wrapper {
+      width: 100%;
+      position: absolute;
+    }
+  
+    .wrapper.toggled .content-wrapper {
+      position: absolute;
+    }
+  
+    .content-wrapper {
+      
+      #ari-chat{
+        right: 20px;
+        bottom: 30px;
+        
+        img {
+          width: 55px;;
+        }
+      }
+    }
+  }
+
+}

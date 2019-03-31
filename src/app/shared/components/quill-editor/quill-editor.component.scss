@@ -1,0 +1,12 @@
+@import '../../../../styleguide/shared';
+
+:host ::ng-deep .ql-bold {
+  -webkit-user-select: none;
+}
+
+:host ::ng-deep .ql-editor {
+  overflow-y: scroll;
+  resize: vertical;
+  height: 120px;
+  font-size: 16px;
+}

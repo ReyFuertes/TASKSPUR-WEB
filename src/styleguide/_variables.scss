@@ -1,0 +1,52 @@
+// background colors
+$bg-blue: #337FE6;
+$bg-yellow: #FFC91A;
+$bg-red: #FF4141; 
+$bg-green: #72E375;
+$bg-light-blue: #C0D8F7;
+$bg-light-yellow: #FFEEB9;
+$bg-black: #2E2E2E;
+$bg-light-black: #656565;
+$bg-gray: #DEDEDE;
+$bg-light-gray: #F3F3F3;
+$bg-white-gray: #f9f9f9;
+$bg-white-clear: #fcfcfc;
+$bg-primary: #0099ff;
+$bg-white: #fff;
+$bg-info: #00C2FF;
+$bg-warning: #f7b021;
+$bg-secondary: #FF9A66;
+$bg-danger: #FF6262;
+
+//font colors
+$color-white: #fff;
+$color-primary: #0099ff;
+$color-standard: #333;
+$color-success: #36eb7b;
+$color-gray: #666;
+$color-light-gray: #999;
+$color-lighter-gray: #CCC;
+$color-gray-clear: #F3F3F3;
+$color-error: #FF4141; 
+$color-warning: #f7b021;
+$color-blue: #337FE6;
+$color-green: #72E375;
+$color-red: #FF6060; 
+$color-info: #00C2FF;
+$color-secondary: #FF9A66;
+$color-danger: #FF6262;
+$color-black: #333;
+$color-light-blue: #a9d3ef;
+
+$font-family-base: 'Montserrat', sans-serif;
+$font-size-base: '14px';
+$font-weight-base: normal;
+$font-base-color: $color-standard;
+
+//other
+$box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+$box-shadow-2: 3px 2px 8px rgba(0, 0, 0, 0.2);
+$gradient-blue: linear-gradient(45deg, $bg-primary, #20defc);
+$border-line-color: #ddd;
+$text-shadow: 0.5px 0.5px 0.5px $color-light-gray;
+

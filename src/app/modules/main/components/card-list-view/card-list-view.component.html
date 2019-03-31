@@ -1,0 +1,87 @@
+<div *ngFor="let card of cards">
+  <div class="row lvc-row">
+    <div  (click)="onEdit(card.id)" class="lvc-col col-11 col-sm-11 col-md-4 pl-2">
+      <img class="mr-3" src="/assets/images/sample/m1.png" />
+
+      <span class="lvc-col__text">{{ card.name }}</span>
+    </div>
+    <div class="lvc-col col-1 col-sm-1 col-md-8">
+      <span class="lvc__dd">Due Date: {{ card.expectedCompletion | date: 'MM/dd/yyyy' }}</span>
+
+      <div class="lvc-col__btns">
+        <button
+          *ngIf="card.important"
+          type="button"
+          class="btn-challenging">Important
+        </button>
+
+        <button
+          *ngIf="card.urgent"
+          type="button"
+          class="btn-challenging">Urgent
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="btn-{{ getCardPoint(card.point)  | lowercase }} active">
+        {{ getCardPoint(card.point) }}
+      </button>
+
+      <span class="badge-red">3</span>
+      <span class="badge-warning">4</span>
+      <span class="badge-primary">5</span>
+      <img class="lvc-col__img" src="/assets/svg/icon-time.svg" />
+      <img class="lvc-col__img" src="/assets/svg/icon-attached.svg" />
+      <img class="lvc-col__img" src="/assets/svg/icon-comments.svg" />
+      <i (click)="selectCardOption($event, card, op)" class="fas fa-ellipsis-v"></i>
+
+      <p-overlayPanel appendTo="body" [dismissable]="true" #op>
+        <ul class="list-group list-group-flush">
+          <li
+            (click)="showCloneCardDialog = !showCloneCardDialog"
+            class="list-group-item"><img src="/assets/svg/icon_clone.svg" /> Clone</li>
+          <li
+            data-toggle="modal" data-target="#rescheduleModal"
+            class="list-group-item"><img src="/assets/svg/icon_reschedule.svg" /> Reschedule</li>
+        </ul>
+        <div class="popover-menu-title">
+          <label>Transition to:</label>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li
+            (click)="onUpdateStatus(card.id, cardStatus.Later)"
+            [hidden]="isActiveStatus(card.status, cardStatus.Later)"
+            class="list-group-item border-0"><img src="/assets/svg/icon_moveto.svg" /> Later</li>
+          <li
+            (click)="onUpdateStatus(card.id, cardStatus.Today)"
+            [hidden]="isActiveStatus(card.status, cardStatus.Today)"
+            class="list-group-item border-0"><img src="/assets/svg/icon_moveto.svg" /> Today</li>
+          <li
+            (click)="onUpdateStatus(card.id, cardStatus.Doing)"
+            [hidden]="isActiveStatus(card.status, cardStatus.Doing)"
+            class="list-group-item"><img src="/assets/svg/icon_moveto.svg" /> Doing</li>
+          <li
+            (click)="onUpdateStatus(card.id, cardStatus.Done)"
+            [hidden]="isActiveStatus(card.status, cardStatus.Done)"
+            class="list-group-item"><img src="/assets/svg/icon_moveto.svg" /> Done</li>
+          <li
+            (click)="onDelete(card)"
+            class="list-group-item"><img src="/assets/svg/icon_delete.svg" /> Delete</li>
+          <li
+            (click)="onArchive(card)"
+            class="list-group-item border-0"><img src="/assets/svg/icon_archive.svg" /> Archive</li>
+        </ul>
+        <div class="row p-2 owner-pane">
+          <div class="col-3 p-0"><img
+              class="o-img"
+              src="/assets/images/sample/m1.png" /></div>
+          <div class="col-9 p-0">
+            <p class="pl-2 text-bold o-name">Jack Daniels</p>
+            <p class="pl-2 o-title">Owner</p>
+          </div>
+        </div>
+      </p-overlayPanel>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<p-toast key="t" [style]="{marginTop: '80px'}" position="top-right"></p-toast>
+<div class="login-loader-container" *ngIf="showLoader">
+  <div class="loader-container">
+    <img src="./assets/images/loader.gif" class="ari-logo-loader" alt="Loading… Hang in there…">
+  </div>
+</div>
+<router-outlet></router-outlet>

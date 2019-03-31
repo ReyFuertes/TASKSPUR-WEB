@@ -1,0 +1,33 @@
+@mixin input {
+
+}
+
+@mixin input-email {
+
+  ~ .icon-email-success {
+    position: absolute;
+    top: 13px;
+    left: calc(100% - 20px);
+    color: $color-success;
+  }
+
+  ~ .icon-email-error {
+    position: absolute;
+    top: 13px;
+    left: calc(100% - 20px);
+    color: red;
+    cursor: pointer;
+  }
+  
+}
+
+@mixin input-password {
+
+  ~ .icon-password-view {
+    position: absolute;
+    top: 15px;
+    left: calc(100% - 20px);
+    color: $color-light-gray;
+    cursor: pointer;
+  }
+}

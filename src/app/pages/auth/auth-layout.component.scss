@@ -1,0 +1,27 @@
+@import '../../../styleguide/shared';
+
+.wrapper {
+  font-family: $font-family-base;
+  color: $font-base-color;
+  background-image: url('/assets/images/desktop/desktop_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 360px;
+  width: 100%;
+  height: 100vh;
+  // top: -80px;
+  position: relative;
+}
+
+
+@media (max-width: 480px) {
+  .col-12 {
+    padding: 0;
+  }
+
+  .wrapper {
+    background: none;
+    height: 100%;
+    top:0;
+  }
+}

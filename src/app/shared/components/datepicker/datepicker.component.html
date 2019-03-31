@@ -1,0 +1,51 @@
+<div *ngIf="parentForm" [formGroup]="parentForm">
+  <div *ngIf="formGroupName else dt" [formGroupName]="formGroupName">
+      <p-calendar 
+        #calendar
+        (onSelect)="onChange($event)"
+        [tabindex]="tabIndex" 
+        [formControlName]="controlName" 
+        [style]="{'width':'100%'}" 
+        [readonlyInput]="true" 
+        [monthNavigator]="true"
+        [yearNavigator]="true" 
+        yearRange="1950:2030"
+        [dateFormat]="customFormat" 
+        [minDate]="minDateValue" 
+        [maxDate]="maxDateValue"
+        [readonlyInput]="true"
+      >
+      </p-calendar>
+
+      <img (click)="openCalendar($event)" src="/assets/svg/calendar-icon.svg" />
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>{{ label }} <span *ngIf="isRequired" class="color-red">*</span></label>
+  </div>
+</div>
+
+<ng-template #dt>
+  <div [formGroup]="parentForm" >
+    <p-calendar 
+        #calendar
+        (onSelect)="onChange($event)"
+        [tabindex]="tabIndex" 
+        [formControlName]="controlName" 
+        [style]="{'width':'100%'}" 
+        [readonlyInput]="true" 
+        [monthNavigator]="true"
+        [yearNavigator]="true" 
+        yearRange="1950:2030"
+        [dateFormat]="customFormat" 
+        [minDate]="minDateValue" 
+        [maxDate]="maxDateValue"
+        [readonlyInput]="true"
+      >
+      </p-calendar>
+  
+      <img (click)="openCalendar($event)" src="/assets/svg/calendar-icon.svg" />
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>{{ label }} <span *ngIf="isRequired" class="color-red">*</span></label>
+  </div>
+</ng-template>

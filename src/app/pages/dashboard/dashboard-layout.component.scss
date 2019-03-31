@@ -1,0 +1,129 @@
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 190px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-width: 320px;
+  padding: 10px;
+}
+
+.content-wrapper {
+  min-width: 320px;
+  margin-top: 80px;
+}
+
+.sidebar-wrapper {
+  display: none;
+}
+
+.footer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (min-width:1600px) {
+  .footer {
+    background-size: 100%;
+  }
+}
+
+@media (max-width:991px) {
+  .wrapper {
+    background: none;
+    padding-left: 0;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  .content-wrapper {
+    padding-left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .sidebar-wrapper {
+    display: block;
+    z-index: 1000;
+    position: fixed;
+    left: 215px;
+    width: 0;
+    height: 100%;
+    margin-left: -215px;
+    overflow-y: auto;
+
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+    box-shadow: 0 4px 700px 0 rgba(0, 0, 0, 0.4), 0 4px 200px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 700px 0 rgba(0, 0, 0, 0.4), 0 4px 200px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 700px 0 rgba(0, 0, 0, 0.4), 0 4px 200px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .wrapper.toggled {
+    padding-left: 215px;
+  }
+
+
+  .sidebar-wrapper.toggled {
+    width: 215px;
+  }
+
+  .wrapper.toggled .sidebar-wrapper {
+    width: 215px;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    position: absolute;
+  }
+
+  .wrapper.toggled .content-wrapper {
+    position: absolute;
+    margin-right: -215px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    background: none;
+  }
+
+  .content {
+    min-height: calc(100vh - 160px);
+    padding: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper.toggled {
+    padding-left: 215px;
+  }
+
+  .sidebar-wrapper.toggled {
+    width: 215px;
+  }
+
+  .wrapper.toggled .sidebar-wrapper {
+    width: 215px;
+  }
+
+  .wrapper.toggled .content-wrapper {
+    margin-right: -215px;
+  }
+}
+
+@media (max-width: 320px) {
+  .content {
+    padding: 0;
+  }
+
+  .profile-container {
+    margin: 10px;
+  }
+}
+

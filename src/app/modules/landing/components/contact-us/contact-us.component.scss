@@ -1,0 +1,231 @@
+@import "../../../../../styleguide/shared";
+
+.cu {
+  padding: 110px 0;
+ 
+  background: #F2F8FD;
+
+  .cu-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    .cu-text-header{
+      @include heading-small;
+      margin-bottom: 0px;
+    }
+  
+    .cu-title {
+      @include heading-primary;
+      text-align: center
+    }
+  
+    .cu-sub-title {
+      color: #89898a;
+      font-size: 20px;
+      max-width: 625px;
+      margin: 0 auto;
+    }
+
+    .cu-fields {
+      margin-top: 40px;
+      padding: 0 180px;
+
+      .pad-right {
+        padding-right: 10px;
+      }
+
+      .pad-left {
+        padding-left: 10px;
+      }
+
+      .cu-input {
+        color: #8F979E;
+        background: #E4EDF4;
+        border: 1px solid #8F979E;
+        padding: 24px 30px;
+        width: 100%;
+        margin: 10px 0;
+        font-size: 18px;
+      }
+
+      .floating-label  label {
+        top: 20px;
+        font-size: 18px;
+        padding-left: 30px;
+        color: #8F979E;
+      }
+
+      .floating-label input:focus ~ label, .floating-label input:valid ~ label {
+        top: 5px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .floating-label textarea:focus ~ label, .floating-label textarea:valid ~ label {
+        top: 5px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .floating-label input {
+        font-size: 18px;
+        padding: 24px 30px;
+        background: #E4EDF4;
+        border: 1px solid #CCC;
+      }
+
+      .floating-label input:focus {
+        outline: none;
+        background: $color-white;
+      }
+
+      .floating-label-textarea {
+        @include floating-label-textarea;
+      }
+
+      .floating-label-textarea label {
+        top: 20px !important;
+        font-size: 18px !important;
+        padding-left: 30px !important;
+        color: #8F979E !important;
+        font-weight: 400 !important; 
+      }
+
+      .floating-label-textarea textarea {
+        font-size: 18px;
+        padding: 24px 30px;
+        background: #E4EDF4;
+        border: 1px solid #CCC;
+
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+
+        resize: none; 
+      }
+
+      .floating-label-textarea textarea:focus {
+        outline: none;
+        background: $color-white;
+      }
+
+      .floating-label-textarea textarea:focus ~ label {
+        top: 5px !important;;
+        font-size: 12px !important;;
+        font-weight: bold !important;;
+      }
+      
+     
+
+      .btn-contact {
+        width: 290px;
+        height: 70px;
+        color: $color-white;
+        background: #0090F0;
+        border-radius: 6px;
+        margin: 0 auto;
+        margin-top: 30px;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all .2s;
+      }
+
+      .btn-contact:hover {
+        background: #FF6060;
+        font-weight: 700;
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+        -webkit-box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  
+}
+
+@media (max-width: 1600px) {
+  
+}
+
+@media (max-width: 1500px) {
+  
+
+}
+
+@media (max-width: 1367px) {
+  
+}
+
+@media (max-width: 1100px) {
+  
+}
+
+@media (max-width: 991px) {
+  
+}
+
+@media (max-width: 850px) {
+  
+}
+
+@media (max-width: 767px) {
+  .cu {
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    .cu-content {
+      
+      .cu-text-header{
+        display: none;
+      }
+
+      .cu-title {
+        font-size: 36px;
+      }
+
+      .cu-fields {
+        padding: 0 36px;
+
+        .pad-right {
+          padding-right: 15px;
+        }
+  
+        .pad-left {
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .cu {
+    .cu-content {
+      .cu-text-header{
+        display: none;
+      }
+
+      .cu-title {
+        font-size: 27px;
+      }
+
+      .cu-sub-title {
+        font-size: 15px;
+      }
+
+      .cu-fields {
+        .cu-input {
+          padding: 19px 20px;
+          font-size: 15px;
+        }
+
+        .btn-contact {
+          width: 260px;
+          height: 55px;
+        }
+      }
+    }
+  }
+}

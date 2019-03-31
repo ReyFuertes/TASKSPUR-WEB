@@ -1,0 +1,39 @@
+@mixin font($variant: base, $color: false) {
+  $variants: map-get($font-variants, $variant);
+}
+
+@mixin link-variant($color) {
+  color: $color;
+  cursor: pointer;
+
+  &::before {
+    color: $color;
+  }
+
+  &::after {
+    background: $color;
+  }
+
+  &:focus, &:hover {
+    color: rgba($color, .7);
+    text-decoration: none;
+  }
+}
+
+@mixin error-hint {
+  color: $color-error;
+  font-size: 12px;
+}
+
+//Landing page
+@mixin heading-primary {
+  font-size: 62px;
+  font-weight: 700;
+  color: #000000;
+}
+
+@mixin heading-small {
+  font-size: 20px;
+  color: #0199FF;
+  font-weight: 700;
+}

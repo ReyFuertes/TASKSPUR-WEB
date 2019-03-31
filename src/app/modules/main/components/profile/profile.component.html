@@ -1,0 +1,117 @@
+<p-toast position="top-center"></p-toast>
+<div class="profile-container" >
+  <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+ 
+  <div [@scaleAnimation]="animationState" class="card-web">
+    <div class="card-web-header">{{ profileInformationText }}</div>
+    <div class="card-web-content">
+      <form novalidate [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-xs-12 col-md-5 col-lg-5">
+              <app-image-upload 
+                (onChange)="handleImageChange($event)" 
+                [imageDisplayUrl]="imageDisplayUrl" 
+                [parentForm]="profileForm" 
+              ></app-image-upload>
+          </div>
+
+          <div class="col-xs-12 col-md-6 col-lg-7" [ngStyle]="{'margin': '0 auto'}">
+              <div class="col-xs-12">
+                <label class="email-label">Email Address</label>
+                <label class="email-value">{{ profileForm.get('email').value }}</label>
+              </div>
+
+              <div formGroupName="name">
+                <div class="col-xs-12">
+                  <div class="floating-label group">
+                    <input type="text" formControlName="first" name="first" tabindex="1" autocomplete="off" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>First Name</label>
+                  </div>
+                </div>
+
+                <div class="col-xs-12">
+                  <div class="floating-label group">
+                    <input type="text" formControlName="last" name="last" tabindex="2" autocomplete="off"  required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Last Name</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12">
+                <div class="floating-label group">
+                  <app-datepicker 
+                    *ngIf="profileForm.get('birth').get('date').value" 
+                    [parentForm]="profileForm" 
+                    [formGroupName]="'birth'" 
+                    [controlName]="'date'" 
+                    [tabIndex]="4"></app-datepicker>
+                </div>
+              </div>
+
+              <div formGroupName="location">
+                <div class="col-xs-12">
+                  <div class="floating-label group">
+                    <input type="text" formControlName="street" name="street" tabindex="4" autocomplete="off" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Street</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="floating-label">
+                      <input type="text" formControlName="city" name="city" tabindex="6" autocomplete="off" required>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label>City</label>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12 col-md-6">
+                    <div class="floating-label group">
+                      <input type="text" formControlName="state" name="state" tabindex="7" autocomplete="off" required>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label>State</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- *ngIf="profileForm.get('location').get('country').value"  -->
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <app-dropdown 
+                      [tabIndex]="8" 
+                      [parentForm]="profileForm" 
+                      [groupName]="'location'" 
+                      [controlName]="'country'" 
+                      [items]="countries"
+                      [placeholder]="'Select Country'" 
+                      [label]="'Country'"
+                    ></app-dropdown>
+                  </div>
+
+                  <div class="col-sm-12 col-md-6">
+                    <div class="floating-label group">
+                      <input type="text" formControlName="postalCode" name="postalCode" tabindex="9" autocomplete="off" required>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label>Postal Code</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 btn-container" [ngStyle]="{'text-align': 'right'}">
+                <button type="submit" [disabled]="!profileForm.valid  || isSubmitting" class="btn btn-primary btn-save-changes">
+                  <i *ngIf="isSubmitting" class="fas fa-spinner fa-pulse"></i> Save Changes</button>
+              </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,245 @@
+@import '../../../../../styleguide/shared';
+
+:host ::ng-deep .ui-toast-message-content {
+  background: $color-white;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+:host ::ng-deep .pi-exclamation-triangle {
+  color: $color-red;
+}
+
+:host ::ng-deep .ui-toast .ui-toast-message.ui-toast-message-warn .ui-toast-close-icon {
+  color: $color-gray;
+}
+
+.toast-title {
+  color: $color-standard;
+}
+
+.btn-confirm {
+  @include btn-default;
+
+  text-shadow: $text-shadow;
+}
+
+.btn-reject {
+  @include btn-gradient-blue;
+
+  text-shadow: $text-shadow;
+}
+
+.board-container {
+  @include main-container;
+
+  padding: 20px 0;
+  height: auto;
+  margin: 0;
+
+  h4 {
+    margin-bottom: 5px;
+  }
+
+  .bc-icon-container,
+  .fa-trash-alt {
+    cursor: pointer;
+  }
+
+  .btn-create-web {
+    @include btn-gradient-blue;
+    
+    max-width: 160px;
+    height: 40px;
+    min-width: 130px;
+  }
+
+  .btn-create-mobile {
+    @include btn-gradient-blue;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .btn-search-mobile {
+    @include btn-transparent;
+
+    border: thin $color-lighter-gray solid;
+    color: $color-lighter-gray;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-shadow: none;
+  }
+
+  .board-header {
+    margin-bottom: 5px;
+
+    .btn-action-mobile {
+      display: none;
+      height: 40px;
+      width: auto;
+      float: right;
+
+      .btn {
+        margin: 5px;
+        padding: 9px;
+
+        i {
+          font-size: 18px;
+          padding: 1px;
+        }
+      }
+    }
+  }
+
+  .o-l-p {
+    padding: 25px 5px !important;
+  }
+
+  .r-l-p {
+    padding: 17px 5px !important;
+  }
+
+  .m-l-p {
+    padding: 5px !important;
+  }
+
+  .board-content {
+    margin-top: 10px;
+    border-top: thin $border-line-color solid;
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  :host ::ng-deep .members-dialog .ui-dialog {
+    width: 1000px !important;
+  }
+
+  :host ::ng-deep .new-board-dialog {
+    .ui-dialog-content {
+      padding: 20px 40px;
+      height: 600px !important;
+    }
+
+    .ui-dialog {
+      width: 720px !important;
+    }
+  }
+}
+
+@media (max-width:1024px) {
+  :host ::ng-deep .members-dialog .ui-dialog {
+    width: 740px !important;
+  }
+
+  .board-container {
+    padding: 10px;
+
+    .btn-create-web {
+      font-size: 12px;
+    }
+
+    .board-header {
+      padding: 10px;
+
+      .btn-action-web {
+        .seach-container {
+          position: relative;
+          left: -20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:875px) {
+  .board-container {
+    .board-header {
+      .btn-action-web {
+        .seach-container {
+          position: relative;
+          left: -34px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:768px) {
+  :host ::ng-deep .members-dialog .ui-dialog {
+    width: 510px !important;
+  }
+
+  .board-container {
+    padding: 0;
+
+    .board-header-container {
+      position: relative;
+      z-index: 999;
+      background: #fff;
+      border-bottom: thin $border-line-color solid;
+      height: 65px;
+      margin: auto 0;
+    }
+
+    .board-header {
+      padding: 0 10px 5px 10px;
+
+      .btn-action-mobile {
+        display: inline-block;
+      }
+
+      .btn-action-web {
+        display: none;
+      }
+    }
+
+    .btn-create {
+      width: 160px;
+    }
+
+    .board-content {
+      border-top: none;
+
+      .bc-card {
+        margin: 0 auto;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width:480px) {
+  .member-card,
+  .member-card-new {
+    margin: 7px auto;
+  }
+
+  .board-container {
+    .board-content {
+      .bc-card {
+        max-width: 330px;
+      }
+    }
+
+    .board-header {
+      padding: 10px;
+    }
+  }
+}
+
+@media (max-width:320px) {
+  .board-container {
+    .board-header {
+      width: 340px;
+
+      .col-6 {
+        padding-right: 0;
+      }
+    }
+  }
+}

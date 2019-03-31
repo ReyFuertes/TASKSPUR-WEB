@@ -1,0 +1,274 @@
+@import '../../../../../styleguide/shared';
+
+.card {
+  min-width: 285px;
+}
+
+.ch-1 {
+  background: #197AF2;
+}
+
+.ch-2 {
+  background: #0099FF;
+}
+
+.ch-3 {
+  background: #00C2FF;
+}
+
+.ch-4 {
+  background: #0DDAFC;
+}
+
+.card-header {
+  color: $color-white;
+  width: 100.8%;
+  position: relative;
+  left: -1px;
+  text-shadow: $text-shadow;
+}
+
+.my-card {
+  border: thin $color-gray-clear solid;
+  height: auto;
+  box-shadow: $box-shadow;
+  padding: 10px;
+  background: $bg-white;
+  min-width: 260px;
+  padding-bottom: 1px;
+  margin: 13px;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &:hover {
+    box-shadow: $box-shadow-2;
+  }
+
+  .mc-header {
+    margin: 8px 0 0 0;
+    height: auto;
+    text-overflow: ellipsis;
+    display: block;
+    display: -webkit-box;
+    height: auto;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:first-child {
+      cursor: pointer;
+    }
+
+    h6 {
+      font-weight: 600;
+      text-overflow: ellipsis;
+      margin-bottom: 0;
+    }
+
+    i {
+      font-size: 21px;
+      color: $color-light-gray;
+      cursor: pointer;
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  .mc-body {
+    height: auto;
+
+    p {
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .mc-body-text {
+      height: auto;
+    }
+
+    .mc-body-date {
+      font-weight: 600;
+      color: $color-red;
+    }
+
+    .mc-body-due-date {
+      font-weight: 600;
+      color: $color-red;
+    }
+
+    .mc-body-buttons {
+      margin: 10px 0;
+
+      .btn-challenging {
+        @include btn-rounded;
+        @include btn-danger;
+
+        height: 32px;
+        font-size: 12px;
+        text-shadow: none;
+      }
+
+      .btn-complex {
+        @include btn-rounded;
+        @include btn-warning;
+
+        height: 32px;
+        font-size: 12px;
+        text-shadow: none;
+      }
+
+      .btn-easy {
+        @include btn-rounded;
+        @include btn-info;
+
+        height: 32px;
+        font-size: 12px;
+        text-shadow: none;
+      }
+
+      .btn-normal {
+        @include btn-rounded;
+        @include btn-primary;
+
+        height: 32px;
+        font-size: 12px;
+        text-shadow: none;
+      }
+
+      .btn-tricky {
+        @include btn-rounded;
+        @include btn-secondary;
+
+        height: 32px;
+        font-size: 12px;
+        text-shadow: none;
+      }
+
+      button {
+        &:first-child {
+          width: 93px;
+        }
+      }
+    }
+  }
+
+  .mc-footer {
+    border-top: thin $border-line-color solid;
+    margin: 0 -10px;
+    height: 50px;
+
+    .badge-red {
+      @include badge-red;
+    }
+
+    .badge-info {
+      @include badge-info;
+    }
+
+    .badge-primary {
+      @include badge-primary;
+    }
+
+    .badge-warning {
+      @include badge-warning;
+    }
+
+    .mc-f-img {
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+
+      &:first-child {
+        border: 2px $color-primary solid;
+      }
+
+      &:nth-child(2) {
+        position: relative;
+        right: -15px;
+      }
+    }
+
+    .ic-container {
+      max-width: 160px;
+      float: right;
+      width: 150px;
+
+      .ic {
+        max-width: 30px;
+        float: right;
+      }
+    }
+
+    i {
+      color: $color-lighter-gray;
+      cursor: pointer;
+      font-size: 18px;
+    }
+  }
+}
+
+.btn-reschedule {
+  @include btn-gradient-blue;
+}
+
+.reschedule__title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.popover-menu-title {
+  margin: 2px 0 10px 0;
+}
+
+label {
+  margin-bottom: 0;
+  font-size: 13px;
+  margin-top: 5px;
+
+}
+
+.list-group {
+  min-width: 150px;
+  margin-bottom: 6px;
+
+  .list-group-item {
+    padding: 5px 0;
+    font-size: 13px;
+    border: none;
+
+    img {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      background-color: $bg-white-clear;
+      cursor: pointer;
+    }
+  }
+}
+
+.owner-pane {
+  background-color: #F4F8FC;
+  margin-left: -10px !important;
+  margin-right: -10px !important;
+
+  .o-img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+  }
+
+  .o-title {
+    font-size: 12px;
+  }
+
+  .o-name {
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    top: 4px;
+  }
+}

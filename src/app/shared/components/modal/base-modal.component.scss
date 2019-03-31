@@ -1,0 +1,31 @@
+@import '../../../../styleguide/shared';
+
+:host ::ng-deep p-header {
+  i.fa-times {
+    float: right;
+    font-size: 19px;
+    padding-right: 2px;
+    padding-top: 2px;
+  }
+}
+
+.btn-cancel {
+  @include btn-default;
+
+  margin-right: 5px;
+  padding: 10px 15px;
+}
+
+.btn-create {
+  @include btn-gradient-blue;
+
+  padding: 10px 15px;
+}
+
+@media (max-height: 800px) {}
+
+@media (max-width: 480px) {
+  :host ::ng-deep .ui-dialog {
+    padding: 5px 0 !important;
+  }
+}

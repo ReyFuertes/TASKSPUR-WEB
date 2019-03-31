@@ -1,0 +1,74 @@
+<div *ngIf="parentForm" [formGroup]="parentForm">
+  <p-dropdown
+    *ngIf="items"
+    [formControlName]="controlName"
+    [tabindex]="tabIndex"
+    [options]="items"
+    [style]="{'width':'100%'}"
+    [filter]="filter"
+    [autoDisplayFirst]="autoDisplayFirst"
+    (onChange)="onChange($event)">
+
+    <ng-template let-item pTemplate="selectedItem">
+      <span>{{item.label}}</span>
+    </ng-template>
+    <ng-template let-country pTemplate="item">
+      <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+        <div>{{country.label}}</div>
+      </div>
+    </ng-template>
+
+  </p-dropdown>
+  <label>{{label}} <span *ngIf="isRequired" class="color-red">*</span></label>
+</div>
+
+
+<!-- <div *ngIf="parentForm" [formGroup]="parentForm">
+  <div *ngIf="groupName else dd" [formGroupName]="groupName">
+    <p-dropdown 
+      [formControlName]="controlName" 
+      [tabindex]="tabIndex" 
+      [options]="items" 
+      [style]="{'width':'100%', 'top': '4px'}" 
+      [filter]="isFilter"
+      (onChange)="onChange($event)"
+    >
+      <ng-template let-item pTemplate="selectedItem">
+        <span>{{item.label}}</span>
+      </ng-template>
+      <ng-template let-country pTemplate="item">
+        <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+          <div>{{country.value}}</div>
+        </div>
+      </ng-template>
+
+    </p-dropdown>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>{{label}} <span *ngIf="isRequired" class="color-red">*</span></label>
+  </div>
+</div>
+
+<ng-template #dd>
+  <div [formGroup]="parentForm" >
+    <p-dropdown 
+      [formControlName]="controlName" 
+      [tabindex]="tabIndex" 
+      [options]="items" 
+      [style]="{'width':'100%'}" 
+      [filter]="isFilter"
+      (onChange)="onChange($event)"
+    >
+      <ng-template let-item pTemplate="selectedItem">
+        <span>{{item.label}}</span>
+      </ng-template>
+      <ng-template let-country pTemplate="item">
+        <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+          <div>{{country.label}}</div>
+        </div>
+      </ng-template>
+
+    </p-dropdown>
+    <label>{{label}} <span *ngIf="isRequired" class="color-red">*</span></label>
+  </div>
+</ng-template> -->

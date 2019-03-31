@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 320 110.149">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #ff6060;
+      }
+
+      .cls-3 {
+        fill: #fc6;
+      }
+
+      .cls-4 {
+        fill: #9c6;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.101" y1="0.173" x2="0.983" y2="0.932" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#09f"/>
+      <stop offset="1" stop-color="#20defc"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_1198" data-name="Group 1198" transform="translate(320 568.149) rotate(180)">
+    <rect id="Rectangle_2158" data-name="Rectangle 2158" class="cls-1" width="320" height="110" transform="translate(0 458)"/>
+    <path id="Intersection_13" data-name="Intersection 13" class="cls-2" d="M56.66,26.024c-8.519-10.373-20.992-5.939-38.615-8.942C7.709,15.32,2.522,6.77,0,0H85.694V33.313c-.878.023-1.8.037-2.751.037C73.749,33.35,61.642,32.09,56.66,26.024Z" transform="translate(85.99 568.149) rotate(180)"/>
+    <path id="Intersection_12" data-name="Intersection 12" class="cls-3" d="M35.628,63.837c-9.056-3.714-8.158-19.531-8.6-21.847s.825-11.361-18.639-28.14C1.326,7.758-.474,3.259.1,0H39.917V65.3A38.263,38.263,0,0,1,35.628,63.837Z" transform="translate(39.917 568.149) rotate(180)"/>
+    <path id="Intersection_16" data-name="Intersection 16" class="cls-4" d="M25,279.462V224.617c2.353,1.039,5.461,3.034,5.686,6.377.364,5.425-.7,20.425,12.409,24.965s30.226,1.167,42.319,13.491a33.9,33.9,0,0,0,18.943,10.012Z" transform="translate(344.666 737.462) rotate(180)"/>
+  </g>
+</svg>

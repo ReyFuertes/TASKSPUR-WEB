@@ -1,0 +1,32 @@
+@import '../../../../../styleguide/shared';
+
+.board-detail-container {
+  margin: 0;
+
+  .bds {
+    &:first-child {
+      margin-top: 10px;
+    }
+
+    margin: 35px 0;
+  }
+
+  .bmp-container {
+    max-width: 345px;
+    margin: 5px !important;
+  }
+
+  .btn-actions {
+    border-top: thin $border-line-color solid;
+  }
+}
+
+:host ::ng-deep .ui-inputswitch.ui-inputswitch-checked {
+  @include input-switch-red;
+}
+
+@media (max-width: 480px) {
+  .btn-cancel, .btn-create {
+    width: 130px !important;
+  }
+}

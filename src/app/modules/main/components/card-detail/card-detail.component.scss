@@ -1,0 +1,182 @@
+@import '../../../../../styleguide/shared';
+
+.card-detail-container {
+  margin-bottom: 40px;
+
+  .field-container {
+    max-width: 350px;
+  }
+
+  .cdm-container {
+    .col-md-12:hover {
+      :hover {
+        background: $color-gray-clear;
+        border-radius: 3px;
+      }
+    }
+
+    .cdm-row {
+      height: auto;
+      padding: 5px;
+
+      .cdm-img {
+        height: 32px;
+        width: 32px;
+        max-width: 32px;
+        background: $color-gray;
+        border-radius: 50%;
+        padding: 0;
+
+        img {
+          height: 32px;
+          width: 32px;
+          border-radius: 50%;
+        }
+      }
+
+      .cdm-name {
+        padding: 5px 10px;
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      .cdm-action-icon {
+        padding: 5px 0;
+        text-align: center;
+        cursor: pointer;
+
+        i {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .btn-add-comment {
+    @include btn-gradient-blue;
+    float: right;
+    max-width: 135px;
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+
+  .comment-box {
+    .comment-box-row {
+      clear: both;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: thin $color-lighter-gray dotted;
+      margin-left: 10px;
+      margin-right: 10px;
+
+      .col-md-2 {
+        flex: 0 0 10%;
+        max-width: 10%;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .cb-head {
+        h5 {
+          margin-bottom: 0;
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 11px;
+          color: $color-light-gray;
+          line-height: 20px;
+          margin-bottom: 0;
+        }
+
+      }
+
+      .cb-desc {
+        color: $color-gray;
+        font-size: 14px;
+      }
+
+      .cb-img {
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        margin: 0 auto;
+
+        img {
+          height: 64px;
+          width: 64px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep .ui-inputswitch.ui-inputswitch-checked {
+  @include input-switch-red;
+}
+
+textarea {
+  width: 100%;
+}
+
+:host ::ng-deep .ui-inputtext:enabled:hover:not(.ui-state-error) {
+  border-color: $color-primary;
+} 
+
+:host ::ng-deep .ui-dropdown:not(.ui-state-disabled):hover {
+  border-color: $color-primary;
+}
+
+@media (max-width: 768px) {
+  .card-detail-container {
+    .comment-box {
+      .comment-box-row {
+        .col-md-2 {
+          flex: 0 0 25%;
+          max-width: 25%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .card-detail-container {
+    .btn-add-comment {
+      margin-right: 15px;
+      max-width: 140px;
+    }
+
+    .col-md-7 {
+      padding: 0;
+    }
+
+    .comment-box {
+      .comment-box-row {
+        .col-md-4 {
+          flex: 0 0 25%;
+          max-width: 25%;
+        }
+
+        .cb-img {
+          height: 45px;
+          width: 45px;
+
+          img {
+            height: 45px;
+            width: 45px;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-cancel, .btn-create {
+    width: 130px !important;
+  }
+}
+

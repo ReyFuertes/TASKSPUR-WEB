@@ -1,0 +1,137 @@
+<div *ngFor="let card of cards" class="my-card">
+  <div class="row mc-header mb-2 pl-1">
+    <div (click)="onEdit(card.id)" class="col-10 p-0">
+      <h6>{{ card.name }}</h6>
+    </div>
+    <div class="col-2 pr-1 text-right" (click)="selectCardOption($event, card, op)">
+      <i class="fas fa-ellipsis-v"></i>
+    </div>
+
+    <p-overlayPanel appendTo="body" [dismissable]="true" #op>
+      <ul class="list-group list-group-flush">
+        <li
+          (click)="showCloneCardDialog = !showCloneCardDialog"
+          class="list-group-item"><img src="/assets/svg/icon_clone.svg" /> Clone</li>
+        <li
+          (click)="onReschedule()"
+          data-toggle="modal" data-target="#rescheduleModal"
+          class="list-group-item"><img src="/assets/svg/icon_reschedule.svg" /> Reschedule</li>
+      </ul>
+      <div class="popover-menu-title">
+        <label>Transition to:</label>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li
+          (click)="onUpdateStatus(card.id, cardStatus.Later)"
+          [hidden]="isActiveStatus(card.status, cardStatus.Later)"
+          class="list-group-item border-0"><img src="/assets/svg/icon_moveto.svg" /> Later</li>
+        <li
+          (click)="onUpdateStatus(card.id, cardStatus.Today)"
+          [hidden]="isActiveStatus(card.status, cardStatus.Today)"
+          class="list-group-item border-0"><img src="/assets/svg/icon_moveto.svg" /> Today</li>
+        <li
+          (click)="onUpdateStatus(card.id, cardStatus.Doing)"
+          [hidden]="isActiveStatus(card.status, cardStatus.Doing)"
+          class="list-group-item"><img src="/assets/svg/icon_moveto.svg" /> Doing</li>
+        <li
+          (click)="onUpdateStatus(card.id, cardStatus.Done)"
+          [hidden]="isActiveStatus(card.status, cardStatus.Done)"
+          class="list-group-item"><img src="/assets/svg/icon_moveto.svg" /> Done</li>
+        <li
+          (click)="onDelete(card)"
+          class="list-group-item"><img src="/assets/svg/icon_delete.svg" /> Delete</li>
+        <li
+          (click)="onArchive(card)"
+          class="list-group-item border-0"><img src="/assets/svg/icon_archive.svg" /> Archive</li>
+      </ul>
+      <div class="row p-2 owner-pane">
+        <div class="col-3 p-0"><img
+            class="o-img"
+            src="/assets/images/sample/m1.png" /></div>
+        <div class="col-9 p-0">
+          <p class="pl-2 text-bold o-name">Jack Daniels</p>
+          <p class="pl-2 o-title">Owner</p>
+        </div>
+      </div>
+    </p-overlayPanel>
+  </div>
+
+  <div class="mc-body pl-1">
+    <p class="mc-body-text mb-2">{{ card.details }}</p>
+    <p class="mc-body-date">Due Date: {{ card.expectedCompletion | date: 'MM/dd/yyyy' }}</p>
+    <p class="mc-body-due-date">*Passed Due Date</p>
+    <div class="mc-body-buttons">
+      <button
+        type="button"
+        class="btn-{{ getCardPoint(card.point)  | lowercase }} active">
+        {{ getCardPoint(card.point) }}</button>
+
+      <button
+        *ngIf="card.important"
+        type="button"
+        class="btn-challenging">Important</button>
+      <button
+        *ngIf="card.urgent"
+        type="button"
+        class="btn-challenging">Urgent</button>
+    </div>
+  </div>
+
+  <div class="mc-footer p-2">
+    <div class="row m-0">
+      <div class="col-6 p-0">
+        <img
+          *ngFor="let i of [1, 2, 3]"
+          class="mc-f-img"
+          src="/assets/images/sample/m{{i}}.png" />
+      </div>
+      <div class="col-6 p-0">
+        <div class="row p-2 pr-4 ic-container">
+          <div class="col-3 m-auto ic"><span class="badge-red">3</span>
+            <img src="/assets/svg/icon-time.svg" />
+          </div>
+          <div class="col-3 m-auto ic"><span class="badge-warning">7</span>
+            <img src="/assets/svg/icon-attached.svg" />
+          </div>
+          <div class="col-3 m-auto ic"><span class="badge-info">1</span>
+            <img src="/assets/svg/icon-comments.svg" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-bs-modal [modalId]="'rescheduleModal'" [maxWidth]="'400px'" [modalTitle]="'Reschedule'">
+  <ng-container class="body">
+    <form novalidate [formGroup]="form" (ngSubmit)="updateSchedule()">
+      <div class="col-12 p-4">
+        <p class="reschedule__title">Select date to reschedule</p>
+        <div class="floating-label group">
+          <app-datepicker
+            appendTo="body"
+            [parentForm]="form"
+            [label]="'Due Date'"
+            [controlName]="'reschedule'">
+          </app-datepicker>
+        </div>
+        <div class="text-center">
+          <button type="submit" [disabled]="!form.valid" class="btn-reschedule">Reshedule</button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+</app-bs-modal>
+
+<!-- clone dialog -->
+<app-base-modal
+  [showModal]="showCloneCardDialog"
+  [headerText]="'Clone Card'"
+  [btnNewText]="'Clone Card'"
+  [btnCloseText]="'Cancel'">
+  <ng-container class="body">
+    <app-card-clone
+      *ngIf="selectedCard"
+      [card]="selectedCard"
+      (reloadEmitter)="onReload($event)"></app-card-clone>
+  </ng-container>
+</app-base-modal>

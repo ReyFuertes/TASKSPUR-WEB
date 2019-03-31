@@ -1,0 +1,24 @@
+<div>
+  <div class="mt-3 atm-text">
+    <label class="text-bold">Attachments</label>
+  </div>
+  <div class="row atm-container flex-nowrap">
+    <div class="atm-box upload-border" (click)="fileDoc.click()">
+      <img class="img-fluid mt-5" src="/assets/svg/upload-icon.svg" />
+      <p class="upload-text">Upload</p>
+      <div class="col-12 btn-attachment">
+        <input #fileDoc type="file" id="fileDoc" (change)="browseAttachment($event)" accept="image/png,image/jpg,image/jpeg,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+      </div>
+    </div>
+
+    <div *ngFor="let file of files; let i = index;" class="col-3">
+      <div>
+        <i (click)="onRemove(file)" class="fas fa-times-circle" data-toggle="tooltip" data-placement="top"
+          title="Remove Attachment"></i>
+        <div (click)="fileDoc.click()" class="atm-box file-border" [ngStyle]="{'background-image':' url(' + file.preview + ')'}">
+          <span class="file-ext">{{ file.preview ? '' : file.ext }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

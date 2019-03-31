@@ -1,0 +1,28 @@
+<div class="row m-auto">
+  <div *ngFor="let member of members; let i = index" class="card member-card">
+    <div class="mc-header">
+      <i [ngClass]="i != 0 ? 'fas fa-trash-alt': 'fas fa-exchange-alt'"></i>
+    </div>
+    <div class="mc-image">
+      <img [src]="member.imgUrl" />
+    </div>
+    <div class="card-body">
+      <div class="mc-name">
+        <p>{{ member.name }}</p>
+      </div>
+      <div class="mc-title">
+        <p>{{ member.title }}</p>
+      </div>
+    </div>
+    <div class="mc-footer">
+      <p>Last Active:</p>
+      <p>{{ member.lastActiveDate }}</p>
+    </div>
+  </div>
+
+  <div class="card member-card-new">
+    <div class="mc-plus">
+      <i class="fas fa-plus"></i>
+    </div>
+  </div>
+</div>
